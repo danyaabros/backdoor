@@ -6,7 +6,7 @@
 
 // Массив с сайтами и параметрами
 const sites = [
-  { url: "https://abros.me", date: "23/01/2024", effect: "none" },
+  { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
   
 ];
 
