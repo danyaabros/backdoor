@@ -32,7 +32,7 @@ function checkDomain() {
   const currentDomain = window.location.hostname;
 
   // Проверка, есть ли текущий домен в списке
-  const siteInfo = sites.find(site => currentDomain.includes(site.url));
+  const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
   
   if (!siteInfo) {
     console.log("Made by Abros Studio → https://abros.me\nDaniel Abros → https://t.me/abrosxd");
