@@ -1,5 +1,5 @@
 /*!
- * Backdoor.js v1.0.2
+ * Backdoor.js v1.0.1
  * (c) 2024-2024
  * Made to protect against scammers.
  */
