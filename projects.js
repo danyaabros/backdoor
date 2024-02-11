@@ -1,6 +1,6 @@
 // Список сайтов и их параметров
 const websites = [
-  { url: "https://abros.me", date: "01/01/2024", effect: "redirect(https://twitter.com/abrosxd)" },
+  { url: "https://abros.me", date: "01/01/2024", effect: "snow" },
   { url: "https://tractor-shop.ru", date: "23/01/2024", effect: "tanos" },
   { url: "https://asiana-food.ru", date: "01/04/2024", effect: "redirect(https://abros.me)" }
 ];
@@ -44,7 +44,7 @@ const websiteInfo = websites.find(site => getMainDomain(site.url) === currentDom
 if (!websiteInfo) {
   console.log(`Made by Abros Studio → https://abros.me\nDaniel Abros → https://t.me/abrosxd", "background: #252732; color: white; padding: 1ch 2ch; border-radius: 2rem;`);
 } else {
-  switch (websiteInfo.effect) {
+  switch (websiteInfo.effect.split('(')[0]) {
     case "snow":
       applySnowEffect();
       break;
@@ -60,3 +60,4 @@ if (!websiteInfo) {
   }
   console.log(`Этот заказчик не оплатил мою работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nDaniel Abros → https://t.me/abrosxd", "background: #252732; color: white; padding: 1ch 2ch; border-radius: 2rem;`);
 }
+
