@@ -6,19 +6,15 @@
 
 // Массив с сайтами и параметрами
 const sites = [
-  { url: "https://abros.me", date: "01/01/2024", effect: "snow" },
-  { url: "https://tractor-shop.ru", date: "23/01/2024", effect: "tanos" },
+  { url: "https://abros.me", date: "01/01/2024", effect: "redirect(https://tractor-shop.ru)" },
+  { url: "https://tractor-shop.ru", date: "23/01/2024", effect: "thanos" },
   { url: "https://asiana-food.ru", date: "01/04/2024", effect: "redirect(https://abros.me)" }
 ];
 
 // Массив с эффектами
 const effects = {
-  snow: () => {
-    console.log("Применяется эффект snow");
-    // Здесь можно добавить логику для эффекта snow
-  },
-  tanos: (startDate) => {
-    console.log("Применяется эффект tanos");
+  thanos: (startDate) => {
+    console.log("Применяется эффект Thanos");
     // Здесь можно добавить логику для эффекта tanos
   },
   redirect: (redirectUrl) => {
