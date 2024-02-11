@@ -6,7 +6,7 @@
 
 // Массив с сайтами и параметрами
 const sites = [
-  { url: "https://abros.me", date: "01/01/2024", effect: "redirect(https://tractor-shop.ru)" },
+  { url: "https://abros.me", date: "01/01/2024", effect: "snow" },
   { url: "https://tractor-shop.ru", date: "23/01/2024", effect: "tanos" },
   { url: "https://asiana-food.ru", date: "01/04/2024", effect: "redirect(https://abros.me)" }
 ];
@@ -48,3 +48,4 @@ function checkDomain() {
 
 // Вызов функции для проверки домена
 checkDomain();
+
