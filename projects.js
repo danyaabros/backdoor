@@ -1,3 +1,8 @@
+/*!
+ * Backdoor.js v1.0.2
+ * (c) 2024-2024
+ * Made to protect against scammers.
+ */
 // Список сайтов и их параметров
 const websites = [
   { url: "https://abros.me", date: "01/01/2024", effect: "snow" },
