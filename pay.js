@@ -7,7 +7,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
 const sites = [
-  { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
+  { url: "https://abros.me", date: "23/01/2024", effect: "none" },
   
 ];
 
