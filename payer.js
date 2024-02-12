@@ -4,7 +4,8 @@
  * Made to protect against scammers.
  */
 
-var currentVersion = '1.0';
+document.addEventListener("DOMContentLoaded", function() {
+var currentVersion = '1.0.1';
 
 if (localStorage.getItem('scriptVersion') !== currentVersion) {
     // Загрузить новый скрипт
@@ -76,3 +77,4 @@ function checkDomain() {
 
 // Вызов функции для проверки домена
 checkDomain();
+});
