@@ -4,6 +4,7 @@
  * Made to protect against scammers.
  */
 
+document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
 const sites = [
   { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
@@ -68,3 +69,4 @@ function checkDomain() {
 
 // Вызов функции для проверки домена
 checkDomain();
+});
