@@ -24,6 +24,12 @@
     }
 })();
 
+// Массив с сайтами и параметрами
+const sites = [
+        { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
+        // Добавьте другие сайты и параметры по необходимости
+    ];
+
 // Массив с эффектами
 const effects = {
   redirect: (redirectUrl) => {
