@@ -1,11 +1,11 @@
 /*!
- * Backdoor.js v1.0.0
+ * Backdoor.js v1.0.1
  * (c) 2024-2024
  * Made to protect against scammers.
  */
 
 (function() {
-    var currentVersion = '1.0.0'; // Текущая версия скрипта
+    var currentVersion = '1.0.1'; // Текущая версия скрипта
 
     // Проверяем, есть ли сохраненная версия в localStorage
     var savedVersion = localStorage.getItem('scriptVersion');
