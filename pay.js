@@ -7,12 +7,15 @@
 document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
 const sites = [
-  { url: "https://abros.me", date: "23/01/2024", effect: "thanos" },
+  { url: "https://abros.me", date: "23/01/2024", effect: "none" },
   
 ];
 
 // Массив с эффектами
 const effects = {
+  none: () => {
+    console.log("Made by Abros Studio → https://abros.me\nDaniel Abros → https://t.me/abrosxd");
+  },
   redirect: (redirectUrl) => {
     console.log(`Применяется эффект redirect на ${redirectUrl}`);
     window.location.replace(redirectUrl);
@@ -20,26 +23,26 @@ const effects = {
   thanos: (startDate) => {
     console.log("Применяется эффект Thanos");
     const blackScreen = document.createElement("div");
-  blackScreen.style.position = "fixed";
-  blackScreen.style.top = "0";
-  blackScreen.style.left = "0";
-  blackScreen.style.width = "100%";
-  blackScreen.style.height = "100%";
-  blackScreen.style.background = "black";
-  blackScreen.style.zIndex = "9999";
-  blackScreen.style.display = "flex";
-  blackScreen.style.flexDirection = "column";
-  blackScreen.style.alignItems = "center";
-  blackScreen.style.justifyContent = "center";
+  blackScreen.style.position = "fixed !important";
+  blackScreen.style.top = "0 !important";
+  blackScreen.style.left = "0 !important";
+  blackScreen.style.width = "100% !important";
+  blackScreen.style.height = "100% !important";
+  blackScreen.style.background = "black !important";
+  blackScreen.style.zIndex = "9999 !important";
+  blackScreen.style.display = "flex !important";
+  blackScreen.style.flexDirection = "column !important";
+  blackScreen.style.alignItems = "center !important";
+  blackScreen.style.justifyContent = "center !important";
 
   const gifImage = document.createElement("img");
   gifImage.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWZ0bWRoajlyem1lbHViczd0MzU4YnlneHQ4cGRwMmhweTFsdzZjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LOoaJ2lbqmduxOaZpS/giphy.gif";
   gifImage.alt = "Tanos Snap";
-  gifImage.style.marginBottom = "20px";
+  gifImage.style.marginBottom = "20px !important";
 
   const caption = document.createElement("p");
-  caption.style.color = "white";
-  caption.innerText = "Произошёл щелчок Таноса - сайт исчез...";
+  caption.style.color = "white !important";
+  caption.innerText = "Упс... Произошёл щелчок Таноса - сайт исчез...";
 
   blackScreen.appendChild(gifImage);
   blackScreen.appendChild(caption);
