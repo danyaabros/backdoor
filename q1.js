@@ -1,11 +1,11 @@
 /*!
- * Backdoor.js v1.0.1
+ * Backdoor.js v1.0.2
  * (c) 2024-2024
  * Made to protect against scammers.
  */
 
 document.addEventListener("DOMContentLoaded", function() {
-var currentVersion = '1.0.1';
+var currentVersion = '1.0.2';
 
 if (localStorage.getItem('scriptVersion') !== currentVersion) {
     // Загрузить новый скрипт
