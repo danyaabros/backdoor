@@ -63,7 +63,7 @@ function checkDomain() {
 
         if (!siteInfo) {
             // Обработка случая, когда домен не найден в списке
-            console.log("Домен не найден в списке.");
+            console.log("Наказаний не найдено. Заказчик чист.");
         } else {
             // Применение эффекта, если домен найден в списке
             const effectFunction = effects[siteInfo.effect];
