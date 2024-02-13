@@ -3,6 +3,8 @@
  * (c) 2024-2024
  * Made to protect against scammers
  * by Deus Notam
+ * Telegram Channel → https://t.me/deusnotam
+ * Telegram Group → https://t.me/d3usn0tam
  * Данный скрипт отвечает за наказание недобросовестных заказчиков.
  */
 
