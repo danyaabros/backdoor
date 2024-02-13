@@ -45,32 +45,31 @@
 				</tbody>
 			</table>
 			<script>
-                $(document).ready(function () {
-                    // Асинхронная загрузка данных из data.js
-                    $.getJSON('data.js', function (data) {
-                        // Функция для обработки данных и заполнения таблицы
-                        function processData(data) {
-                            var tableBody = $("#table tbody");
+        // Функция для обработки данных и заполнения таблицы
+        function processData(data) {
+            var tableBody = $("#table tbody");
 
-                            data.forEach(function (item) {
-                                var row = "<tr>";
-                                row += "<td>" + item.name + "</td>";
-                                row += "<td>" + item.url + "</td>";
-                                row += "<td>" + item.date + "</td>";
-                                row += "<td>" + item.effect + "</td>";
-                                row += "<td>" + item.redirecturl + "</td>";
-                                row += "<td>" + item.note + "</td>";
-                                row += "</tr>";
+            data.forEach(function (item) {
+                var row = "<tr>";
+                row += "<td>" + item.name + "</td>";
+                row += "<td>" + item.url + "</td>";
+                row += "<td>" + item.date + "</td>";
+                row += "<td>" + item.effect + "</td>";
+                row += "<td>" + item.redirecturl + "</td>";
+                row += "<td>" + item.note + "</td>";
+                row += "</tr>";
 
-                                tableBody.append(row);
-                            });
-                        }
-
-                        // Загрузка данных из data.js
-                        processData(data);
-                    });
-                });
-            </script>
+                tableBody.append(row);
+            });
+        }
+    </script>
+    <script src="data.js"></script>
+    <script>
+        // После загрузки данных из data.js вызываем функцию processData для заполнения таблицы
+        $(document).ready(function () {
+            processData(data);
+        });
+    </script>
 		</div>
 	</body>
 </html>
