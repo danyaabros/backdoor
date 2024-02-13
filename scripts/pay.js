@@ -10,10 +10,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
-const sites = [
-  { url: "https://abros.me", date: "23/01/2024", effect: "none" },
-  
-];
+const sites = data;
 
 // Массив с эффектами
 const effects = {
@@ -56,22 +53,23 @@ const effects = {
 
 // Функция для проверки домена
 function checkDomain() {
-  const currentDomain = window.location.hostname;
+        const currentDomain = window.location.hostname;
 
-  // Проверка, есть ли текущий домен в списке
-  const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
-  
-  if (!siteInfo) {
-  }
-  else {
-    // Применение эффекта, если домен найден в списке
-    const effectFunction = effects[siteInfo.effect];
-    if (effectFunction) {
-      effectFunction(siteInfo.redirecturl || siteInfo.date);
-      console.log("Этот заказчик не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam");
+        // Проверка, есть ли текущий домен в списке
+        const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
+
+        if (!siteInfo) {
+            // Обработка случая, когда домен не найден в списке
+            console.log("Домен не найден в списке.");
+        } else {
+            // Применение эффекта, если домен найден в списке
+            const effectFunction = effects[siteInfo.effect];
+            if (effectFunction) {
+                effectFunction(siteInfo.redirecturl || siteInfo.date);
+                console.log("Этот заказчик не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam");
+            }
+        }
     }
-  }
-}
 
 // Вызов функции для проверки домена
 checkDomain();
