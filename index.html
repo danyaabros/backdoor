@@ -20,7 +20,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
-		<script src="data.js" defer></script>
 		<style>.container {width: 100%;padding: 2em;} .bold-blue {font-weight: bold;color: #0277BD;}</style>
 	</head>
 	<body>
@@ -46,27 +45,32 @@
 				</tbody>
 			</table>
 			<script>
-                        $(document).ready(function () {
-                            processData(data);
+                $(document).ready(function () {
+                    // Асинхронная загрузка данных из data.js
+                    $.getJSON('data.js', function (data) {
+                        // Функция для обработки данных и заполнения таблицы
+                        function processData(data) {
+                            var tableBody = $("#table tbody");
 
-                            function processData(data) {
-                                var tableBody = $("#table tbody");
+                            data.forEach(function (item) {
+                                var row = "<tr>";
+                                row += "<td>" + item.name + "</td>";
+                                row += "<td>" + item.url + "</td>";
+                                row += "<td>" + item.date + "</td>";
+                                row += "<td>" + item.effect + "</td>";
+                                row += "<td>" + item.redirecturl + "</td>";
+                                row += "<td>" + item.note + "</td>";
+                                row += "</tr>";
 
-                                data.forEach(function (item) {
-                                    var row = "<tr>";
-                                    row += "<td>" + item.name + "</td>";
-                                    row += "<td>" + item.url + "</td>";
-                                    row += "<td>" + item.date + "</td>";
-                                    row += "<td>" + item.effect + "</td>";
-                                    row += "<td>" + item.redirecturl + "</td>";
-                                    row += "<td>" + item.note + "</td>";
-                                    row += "</tr>";
+                                tableBody.append(row);
+                            });
+                        }
 
-                                    tableBody.append(row);
-                                });
-                            }
-                        });
-                    </script>
+                        // Загрузка данных из data.js
+                        processData(data);
+                    });
+                });
+            </script>
 		</div>
 	</body>
 </html>
