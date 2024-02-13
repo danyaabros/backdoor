@@ -22,4 +22,37 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
 		
 	</head>
+	<body>
+		<div class="container">
+			<h1>Deus Notam Protect</h1>
+			<p>Это мод разработанный для защиты своего контента</p>
+			<p>Здесь можно увидеть проекты, которые были замечены в недобросовестном поведении: не оплате заказов. А так же увидеть являются ли они сейчас подверженны наказанию.</p>
+			<p>На данный момент доступны наказания:<br>Redirect - редирект/перенаправление на сайт указанный в графе: "URL для редиректа".<br>Thanos - поверх всего сайта появляется статическое чёрное окно с gif-анимацией щелчка Таноса.</p>
+
+			<table id="table" data-toggle="table" data-search="false" data-filter-control="true" data-show-export="false" data-click-to-select="true" data-toolbar="#toolbar">
+				<thead>
+					<tr>
+						<th data-field="name" data-filter-control="input" data-sortable="true">Название</th>
+						<th data-field="link" data-sortable="false">Ссылка</th>
+						<th data-field="date" data-filter-control="select" data-sortable="true">Дата занесения в базу</th>
+						<th data-field="effects" data-filter-control="select" data-sortable="true">Наказание</th>
+						<th data-field="redirecturl" data-sortable="false">URL для редиректа</th>
+						<th data-field="note" data-sortable="false">Комментарий от исполнителя</th>
+					</tr>
+				</thead>
+				<tbody>
+		
+					<tr>
+						<td>ABROS</td>
+						<td>https://abros.me</td>
+						<td>06/02/2024</td>
+						<td>thanos</td>
+						<td>-</td>
+						<td>Это сайт для тестов, с ним ничего не происходит.</td>
+					</tr>
+		
+				</tbody>
+			</table>
+		</div>
+	</body>
 </html>
