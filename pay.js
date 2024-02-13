@@ -1,5 +1,5 @@
 /*!
- * Pay.js v1.0.1
+ * Pay.js v1.0.0
  * (c) 2024-2024
  * Made to protect against scammers
  * by Deus Notam
