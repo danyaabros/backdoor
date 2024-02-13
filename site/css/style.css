@@ -107,9 +107,9 @@ tr
 
 .form-control {
 	color: var(--txt-color);
-	background-color: var(--color-filter);
+	background-color: var(--color-filter)  !important;
 }
 
 .table-hover>tbody>tr:hover {
-    background-color: var(--color-tabs);
+    background-color: var(--color-tabs)  !important;
 }
