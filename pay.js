@@ -61,7 +61,9 @@ function checkDomain() {
   // Проверка, есть ли текущий домен в списке
   const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
   
-  if (siteInfo) {
+  if (!siteInfo) {
+  }
+  else {
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.effect];
     if (effectFunction) {
