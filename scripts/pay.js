@@ -14,12 +14,15 @@ const sites = data;
 
 // Массив с эффектами
 const effects = {
+  //Ничего
   none: () => {
   },
+  //redirect - редирект на redirecturl
   redirect: (redirectUrl) => {
     console.log(`Применяется эффект redirect на ${redirectUrl}`);
     window.location.replace(redirectUrl);
   },
+  //thanos - поверх сайта чёрный экран с gif щелком таноса
   thanos: (startDate) => {
     console.log("Применяется эффект Thanos");
     const blackScreen = document.createElement("div");
