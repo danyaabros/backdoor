@@ -3,18 +3,18 @@ var data = [
 ];
 
 function processData(data) {
-  var tableData = data.map(function (item) {
-    return {
-      name: item.name,
-      link: item.link,
-      date: item.date,
-      effects: item.effects,
-      redirecturl: item.redirecturl,
-      note: item.note
-    };
+  var tableBody = $('#tableBody');
+
+  data.forEach(function (item) {
+    var row = '<tr>' +
+      '<td>' + item.name + '</td>' +
+      '<td>' + item.link + '</td>' +
+      '<td>' + item.date + '</td>' +
+      '<td>' + item.effects + '</td>' +
+      '<td>' + item.redirecturl + '</td>' +
+      '<td>' + item.note + '</td>' +
+      '</tr>';
+
+    tableBody.append(row);
   });
-
-  $('#table').bootstrapTable('load', tableData);
 }
-
-processData(data);
