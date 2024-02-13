@@ -42,7 +42,28 @@
 					</tr>
 				</thead>
 				<tbody id="tableBody">
-		
+					<script>
+                        $(document).ready(function () {
+                            processData(data);
+
+                            function processData(data) {
+                                var tableBody = $("#table tbody");
+
+                                data.forEach(function (item) {
+                                    var row = "<tr>";
+                                    row += "<td>" + item.name + "</td>";
+                                    row += "<td>" + item.url + "</td>";
+                                    row += "<td>" + item.date + "</td>";
+                                    row += "<td>" + item.effect + "</td>";
+                                    row += "<td>" + item.redirecturl + "</td>";
+                                    row += "<td>" + item.note + "</td>";
+                                    row += "</tr>";
+
+                                    tableBody.append(row);
+                                });
+                            }
+                        });
+                    </script>
 				</tbody>
 			</table>
 		</div>
