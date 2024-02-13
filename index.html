@@ -79,24 +79,24 @@
 					processData(data);
 				});
 			</script>
-			<scripts>
+			<script>
 				var checkbox = document.querySelector(
-				'input[name=theme-switcher]'
+					'input[name=theme-switcher]'
 				);
 				checkbox.addEventListener('change', function() {
-				if(this.checked) {
-				document.documentElement.setAttribute(
-				'data-theme', 
-				'light'
-				)
-				} else {
-				document.documentElement.setAttribute(
-				'data-theme',
-				'dark'
-				)
-				}
+					if(this.checked) {
+						document.documentElement.setAttribute(
+							'data-theme', 
+							'light'
+						)
+					} else {
+						document.documentElement.setAttribute(
+							'data-theme',
+							'dark'
+						)
+					}
 				});
-			</scripts>
+			</script>
 
 		</div>
 	</body>
