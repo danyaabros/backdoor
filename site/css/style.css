@@ -1,6 +1,7 @@
 .container {
 	width: 100%;
 	padding: 2em;
+	margin-top: 20px;
 }
 
 html {
@@ -36,6 +37,7 @@ body {
 .menu {
     position: fixed;
     z-index: 999;
+    top: 0;
 }
 
 .themeswitcher {
