@@ -38,6 +38,7 @@ body {
     position: fixed;
     z-index: 999;
     top: 0;
+    display: flex;
 }
 
 .themeswitcher {
