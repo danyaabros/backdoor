@@ -1,112 +1,172 @@
  // Создаем элемент canvas и добавляем его поверх всего сайта
   const canvas = document.createElement('canvas');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
-  canvas.style.zIndex = '99999'; // Устанавливаем z-index
   document.body.appendChild(canvas);
+
+  // Устанавливаем стили для canvas и body
+  document.body.style.margin = '0';
+  document.body.style.overflow = 'hidden';
+  canvas.style.display = 'block';
+  canvas.style.zIndex = '99999';
+
 
   // Получаем 2D контекст для рисования
   const ctx = canvas.getContext('2d');
 
-  // Создаем массив для хранения частиц фейерверка
-  const particles = [];
+  // Устанавливаем размеры canvas и стили
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Флаг для отслеживания запущенной анимации
-  let animationStarted = false;
+  // resize
+  window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  });
 
-  // Слушаем события нажатия клавиш
-  document.addEventListener('keydown', handleKeyDown);
+  // objects
+  var listFire = [];
+  var listFirework = [];
+  var fireNumber = 10;
+  var center = { x: canvas.width / 2, y: canvas.height / 2 };
+  var range = 100;
 
-  // Обработка каждого нажатия клавиши
-  let pressedKeys = '';
-
-  function handleKeyDown(event) {
-    const keyPressed = event.key.toUpperCase();
-    pressedKeys += keyPressed;
-
-    // Проверяем последовательность D, E, U, S
-    if (pressedKeys.includes('DEUS') && !animationStarted) {
-      // Вызываем функцию для запуска фейерверка
-      launchFirework();
-
-      // Очищаем последовательность клавиш
-      pressedKeys = '';
-    }
+  for (var i = 0; i < fireNumber; i++) {
+    var fire = {
+      x: Math.random() * range / 2 - range / 4 + center.x,
+      y: Math.random() * range * 2 + canvas.height,
+      size: Math.random() + 0.5,
+      fill: '#fd1',
+      vx: Math.random() - 0.5,
+      vy: -(Math.random() + 4),
+      ax: Math.random() * 0.02 - 0.01,
+      far: Math.random() * range + (center.y - range)
+    };
+    fire.base = {
+      x: fire.x,
+      y: fire.y,
+      vx: fire.vx
+    };
+    //
+    listFire.push(fire);
   }
 
-  // Функция для запуска фейерверка
-  function launchFirework() {
-    // Устанавливаем флаг, чтобы анимация работала только один раз
-    animationStarted = true;
-
-    // Создаем новые частицы и добавляем их в массив
-    for (let i = 0; i < 100; i++) {
-      particles.push(createParticle());
-    }
-
-    // Запускаем анимацию фейерверка
-    animateFirework();
-  }
-
-  // Функция для создания частицы
-  function createParticle() {
-    const x = Math.random() * canvas.width;
-    const y = canvas.height;
-    const color = getRandomColor();
-    const radius = Math.random() * 5 + 1;
-    const speed = { x: (Math.random() - 0.5) * 8, y: Math.random() * -6 };
-
-    return { x, y, color, radius, speed };
-  }
-
-  // Функция для получения случайного цвета
-  function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
+  function randColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    var color = 'rgb(' + r + ',' + g + ',' + b + ')';
     return color;
   }
 
-  // Функция для анимации фейерверка
-  function animateFirework() {
-    // Очищаем canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Keyboard events
+  var pressedKeys = '';
 
-    // Обновляем и рисуем каждую частицу
-    for (let i = 0; i < particles.length; i++) {
-      const particle = particles[i];
+  window.addEventListener('keydown', function(event) {
+    var keyPressed = event.key.toUpperCase();
+    pressedKeys += keyPressed;
 
-      // Обновляем координаты частицы
-      particle.x += particle.speed.x;
-      particle.y += particle.speed.y;
+    // Check for the sequence 'DEUS'
+    if (pressedKeys.includes('DEUS')) {
+      launchFirework();
+      pressedKeys = ''; // Clear the key sequence
+    }
+  });
 
-      // Уменьшаем радиус частицы
-      particle.radius -= 0.02;
+  function launchFirework() {
+    // objects
+    var color = randColor();
+    for (var i = 0; i < fireNumber * 5; i++) {
+      var firework = {
+        x: center.x,
+        y: center.y,
+        size: Math.random() + 1.5,
+        fill: color,
+        vx: Math.random() * 5 - 2.5,
+        vy: Math.random() * -5 + 1.5,
+        ay: 0.05,
+        alpha: 1,
+        life: Math.round(Math.random() * range / 2) + range / 2
+      };
+      firework.base = {
+        life: firework.life,
+        size: firework.size
+      };
+      listFirework.push(firework);
+    }
+  }
 
-      // Рисуем частицу
-      ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = particle.color;
-      ctx.fill();
+  (function loop() {
+    requestAnimationFrame(loop);
+    update();
+    draw();
+  })();
 
-      // Удаляем частицу, если её радиус стал слишком маленьким или она вышла за нижнюю границу
-      if (particle.radius <= 0 || particle.y > canvas.height) {
-        particles.splice(i, 1);
-        i--;
+  function update() {
+    for (var i = 0; i < listFire.length; i++) {
+      var fire = listFire[i];
+      //
+      if (fire.y <= fire.far) {
+        // case add firework
+        launchFirework();
+        // reset
+        fire.y = fire.base.y;
+        fire.x = fire.base.x;
+        fire.vx = fire.base.vx;
+        fire.ax = Math.random() * 0.02 - 0.01;
       }
+      //
+      fire.x += fire.vx;
+      fire.y += fire.vy;
+      fire.vx += fire.ax;
     }
 
-    // Если есть активные частицы, продолжаем анимацию
-    if (particles.length > 0) {
-      requestAnimationFrame(animateFirework);
-    } else {
-      // Сбрасываем флаг, чтобы анимация могла быть запущена снова
-      animationStarted = false;
+    for (var i = listFirework.length - 1; i >= 0; i--) {
+      var firework = listFirework[i];
+      if (firework) {
+        firework.x += firework.vx;
+        firework.y += firework.vy;
+        firework.vy += firework.ay;
+        firework.alpha = firework.life / firework.base.life;
+        firework.size = firework.alpha * firework.base.size;
+        firework.alpha = firework.alpha > 0.6 ? 1 : firework.alpha;
+        //
+        firework.life--;
+        if (firework.life <= 0) {
+          listFirework.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  function draw() {
+    // clear
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = 0.18;
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // re-draw
+    ctx.globalCompositeOperation = 'screen';
+    ctx.globalAlpha = 1;
+    for (var i = 0; i < listFire.length; i++) {
+      var fire = listFire[i];
+      ctx.beginPath();
+      ctx.arc(fire.x, fire.y, fire.size, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fillStyle = fire.fill;
+      ctx.fill();
+    }
+
+    for (var i = 0; i < listFirework.length; i++) {
+      var firework = listFirework[i];
+      ctx.globalAlpha = firework.alpha;
+      ctx.beginPath();
+      ctx.arc(firework.x, firework.y, firework.size, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fillStyle = firework.fill;
+      ctx.fill();
     }
   }
