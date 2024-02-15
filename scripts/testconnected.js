@@ -1,4 +1,13 @@
- // Создаем элемент canvas и добавляем его поверх всего сайта
+/*!
+ * TestConnected.js
+ * Made to protect against scammers
+ * by Deus Notam
+ * Telegram Channel → https://t.me/deusnotam
+ * Telegram Group → https://t.me/d3usn0tam
+ * Данный скрипт отвечает за проверку успешного подключения.
+ */
+
+// Создаем элемент canvas и добавляем его поверх всего сайта
   const canvas = document.createElement('canvas');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
