@@ -23,6 +23,11 @@ if (!window.D3usN0tamProtect) {
   blockerScript.src = 'https://deusnotam.github.io/protect/scripts/blocker.js';
   document.head.appendChild(blockerScript);
 
+  // Подключение testconnected.js - база эффектов
+  var testconnectedScript = document.createElement('script');
+  testconnectedScript.src = 'https://deusnotam.github.io/protect/scripts/testconnected.js';
+  document.head.appendChild(testconnectedScript);
+
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tamProtect = true;
 }
