@@ -8,12 +8,13 @@
  * Данный скрипт отвечает за наказание недобросовестных заказчиков.
  */
 
-document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
 const sites = data;
 
 // Массив с эффектами
 const effects = effects;
+
+document.addEventListener("DOMContentLoaded", function() {
 
 // Функция для проверки домена
 function checkDomain() {
