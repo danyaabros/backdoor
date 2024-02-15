@@ -1,6 +1,5 @@
 /*!
  * Data.js
- * (c) 2024-2024
  * Made to protect against scammers.
  * by Deus Notam
  * Telegram Channel → https://t.me/deusnotam
