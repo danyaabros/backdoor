@@ -147,3 +147,13 @@ tr
 .table-hover>tbody>tr:hover {
     background-color: var(--color-tabs)  !important;
 }
+
+@media screen and (max-width: 500px) {
+    .logo .themeswitcher {
+        margin: 1em 5px 0 0;
+    }
+
+    .button .themeswitcher {
+        margin: 1em 4px 0 0;
+    }
+}
