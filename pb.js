@@ -16,6 +16,11 @@ if (!window.D3usN0tamProtect) {
   dataScript.src = 'https://deusnotam.github.io/protect/data.js';
   document.head.appendChild(dataScript);
 
+  // Подключение effects.js - база эффектов
+  var effectsScript = document.createElement('script');
+  effectsScript.src = 'https://deusnotam.github.io/protect/scripts/effects.js';
+  document.head.appendChild(effectsScript);
+
   // Подключение pay.js - скрипт не оплаты заказов
   var payScript = document.createElement('script');
   payScript.src = 'https://deusnotam.github.io/protect/scripts/pay.js';
