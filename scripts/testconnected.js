@@ -35,9 +35,10 @@ function launchFirework() {
   const firework = document.createElement('div');
   firework.style.width = '10px';
   firework.style.height = '10px';
+  firework.style.zIndex = "9999";
   firework.style.borderRadius = '50%';
   firework.style.position = 'absolute';
-  firework.style.background = 'red';  // Цвет фейерверка
+  firework.style.background = 'black';  // Цвет фейерверка
 
   // Добавляем элемент в контейнер
   fireworkContainer.appendChild(firework);
