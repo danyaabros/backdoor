@@ -6,7 +6,6 @@
   document.body.style.margin = '0';
   document.body.style.overflow = 'hidden';
   canvas.style.display = 'block';
-  canvas.style.zIndex = '99999';
   canvas.style.position = 'fixed';
   canvas.style.top = '0';
   canvas.style.left = '0';
