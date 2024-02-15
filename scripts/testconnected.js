@@ -6,6 +6,7 @@
   canvas.style.top = '0';
   canvas.style.left = '0';
   canvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
+  canvas.style.zIndex = '99999'; // Устанавливаем z-index
   document.body.appendChild(canvas);
 
   // Получаем 2D контекст для рисования
@@ -94,8 +95,8 @@
       ctx.fillStyle = particle.color;
       ctx.fill();
 
-      // Удаляем частицу, если её радиус стал слишком маленьким
-      if (particle.radius <= 0) {
+      // Удаляем частицу, если её радиус стал слишком маленьким или она вышла за нижнюю границу
+      if (particle.radius <= 0 || particle.y > canvas.height) {
         particles.splice(i, 1);
         i--;
       }
