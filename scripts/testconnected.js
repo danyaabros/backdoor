@@ -1,3 +1,6 @@
+// Устанавливаем политику содержимого для работы в iframe
+document.domain = document.domain;
+
 // Слушаем события нажатия клавиш
 let pressedKeys = '';
 document.addEventListener('keydown', (event) => {
