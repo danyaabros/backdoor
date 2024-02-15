@@ -9,7 +9,10 @@
  */
 
 // data.js
-import { data } from '/data.js';
+import { data } from './data.js';
+
+// Теперь вы можете использовать значение data в pay.js
+console.log(data);
 // effects.js
 import { effects } from '/scripts/effects.js';
 
