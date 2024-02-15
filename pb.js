@@ -11,7 +11,7 @@
 
 // Проверка, был ли ранее подключен файл
 if (!window.D3usN0tamProtect) {
-  console.log("D3usN0tam Protect - Connected!\n\nMade by D3us N0tam\nTelegram Channel → https://t.me/deusnotam\nTelegram Group → https://t.me/d3usn0tam\n\nДанный скрипт разработан в целях защиты от недобросовестных заказчиков.\nThis script was developed to protect against unscrupulous customers.");
+  console.log("D3usN0tam Protect - Connected!\n\nMade by D3us N0tam\nNotion Site → https://deusnotam.notion.site/D3usN0tam-Protect-ba149f69de214fd3ba0b9df834eb2c6e?pvs=4\nTelegram Channel → https://t.me/deusnotam\nTelegram Group → https://t.me/d3usn0tam\n\nДанный скрипт разработан в целях защиты от недобросовестных заказчиков.\nThis script was developed to protect against unscrupulous customers.");
 
   // Подключение data.js - база данных сайтов
   var dataScript = document.createElement('script');
