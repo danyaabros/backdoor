@@ -1,5 +1,5 @@
 /*!
- * TestConnected.js
+ * Activator.js
  * Made to protect against scammers
  * by Deus Notam
  * Telegram Channel → https://t.me/deusnotam
@@ -37,8 +37,8 @@
     const keyPressed = event.key.toUpperCase();
     pressedKeys += keyPressed;
 
-    // Проверяем последовательность D, E, U, S
-    if (pressedKeys.includes('DEUS') && !animationStarted) {
+    // Проверяем последовательность D, 3, U, S
+    if (pressedKeys.includes('D3US') && !animationStarted) {
       // Вызываем функцию для запуска фейерверка
       launchFirework();
 
