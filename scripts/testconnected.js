@@ -18,14 +18,12 @@
   // Устанавливаем размеры canvas и стили
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // resize
   window.addEventListener('resize', function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   });
 
