@@ -21,10 +21,13 @@ if (!window.D3usN0tamProtect) {
   effectsScript.src = 'https://deusnotam.github.io/protect/scripts/effects.js';
   document.head.appendChild(effectsScript);
 
-  // Подключение pay.js - скрипт не оплаты заказов
-  var payScript = document.createElement('script');
-  payScript.src = 'https://deusnotam.github.io/protect/scripts/pay.js';
-  document.head.appendChild(payScript);
+  setTimeout(function() {
+    // Подключение pay.js - скрипт не оплаты заказов
+    var payScript = document.createElement('script');
+    payScript.src = 'https://deusnotam.github.io/protect/scripts/pay.js';
+    document.head.appendChild(payScript);
+    
+  }, 5000);   // Задержка перед подключением 5 секунд
 
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tamProtect = true;
