@@ -8,7 +8,7 @@
  */
 
 // Массив с эффектами
-var dneffects = {
+var effects = {
   //Ничего
   none: () => {
   },
