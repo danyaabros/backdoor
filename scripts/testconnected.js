@@ -102,7 +102,7 @@
       }
     }
 
-    // Если еще есть частицы, продолжаем анимацию
+    // Если есть активные частицы, продолжаем анимацию
     if (particles.length > 0) {
       requestAnimationFrame(animateFirework);
     } else {
