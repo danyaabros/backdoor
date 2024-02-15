@@ -11,14 +11,14 @@
 
 // Проверка, был ли ранее подключен файл
 if (!window.D3usN0tamProtect) {
-  console.log("D3usN0tam Protect - Connected!\nMade by D3us N0tam\nTelegram Channel → https://t.me/deusnotam\nTelegram Group → https://t.me/d3usn0tam\nДанный скрипт разработан в целях защиты от недобросовестных заказчиков.\nThis script was developed to protect against unscrupulous customers.");
+  console.log("D3usN0tam Protect - Connected!\n\nMade by D3us N0tam\nTelegram Channel → https://t.me/deusnotam\nTelegram Group → https://t.me/d3usn0tam\n\nДанный скрипт разработан в целях защиты от недобросовестных заказчиков.\nThis script was developed to protect against unscrupulous customers.");
 
   // Подключение data.js - база данных сайтов
   var dataScript = document.createElement('script');
   dataScript.src = 'https://deusnotam.github.io/protect/data.js';
   document.head.appendChild(dataScript);
 
-  // Подключение effects.js - база эффектов
+  // Подключение blocker.js - база эффектов
   var blockerScript = document.createElement('script');
   blockerScript.src = 'https://deusnotam.github.io/protect/scripts/blocker.js';
   document.head.appendChild(blockerScript);
