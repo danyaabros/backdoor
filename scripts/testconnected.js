@@ -1,18 +1,3 @@
-// Стилизация для анимации
-const fireworkStyles = `
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-`;
-
-// Создаем контейнер для анимации
-const fireworkContainer = document.createElement('div');
-fireworkContainer.style = fireworkStyles;
-document.body.appendChild(fireworkContainer);
-
 // Слушаем события нажатия клавиш
 let pressedKeys = '';
 document.addEventListener('keydown', (event) => {
@@ -35,13 +20,13 @@ function launchFirework() {
   const firework = document.createElement('div');
   firework.style.width = '10px';
   firework.style.height = '10px';
-  firework.style.zIndex = "9999";
   firework.style.borderRadius = '50%';
-  firework.style.position = 'absolute';
-  firework.style.background = 'black';  // Цвет фейерверка
+  firework.style.position = 'fixed';
+  firework.style.background = 'red';  // Цвет фейерверка
+  firework.style.zIndex = '9999';
 
-  // Добавляем элемент в контейнер
-  fireworkContainer.appendChild(firework);
+  // Добавляем элемент в body
+  document.body.appendChild(firework);
 
   // Запускаем анимацию
   animateFirework(firework);
