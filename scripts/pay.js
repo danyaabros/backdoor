@@ -9,9 +9,9 @@
  */
 
 // data.js
-import { data } from './data.js';
+import { data } from '.data.js';
 // effects.js
-import { effects } from './scripts/effects.js';
+import { effects } from '.scripts/effects.js';
 
 document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
