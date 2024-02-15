@@ -7,7 +7,11 @@
   document.body.style.overflow = 'hidden';
   canvas.style.display = 'block';
   canvas.style.zIndex = '99999';
-
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
+  canvas.style.zIndex = '99999';canvas.style.position = 'fixed';
 
   // Получаем 2D контекст для рисования
   const ctx = canvas.getContext('2d');
