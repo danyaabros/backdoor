@@ -8,7 +8,7 @@
  */
 
 // Массив с эффектами
-const effects = {
+var effects = {
   //Ничего
   none: () => {
   },
