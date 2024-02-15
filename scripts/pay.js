@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const sites = data;
 
 // Массив с эффектами
-const effects = effects;
+const effects = dneffects;
 
 // Функция для проверки домена
 function checkDomain() {
