@@ -14,6 +14,9 @@
   // Создаем массив для хранения частиц фейерверка
   const particles = [];
 
+  // Флаг для отслеживания запущенной анимации
+  let animationStarted = false;
+
   // Слушаем события нажатия клавиш
   document.addEventListener('keydown', handleKeyDown);
 
@@ -25,7 +28,7 @@
     pressedKeys += keyPressed;
 
     // Проверяем последовательность D, E, U, S
-    if (pressedKeys.includes('DEUS')) {
+    if (pressedKeys.includes('DEUS') && !animationStarted) {
       // Вызываем функцию для запуска фейерверка
       launchFirework();
 
@@ -36,6 +39,9 @@
 
   // Функция для запуска фейерверка
   function launchFirework() {
+    // Устанавливаем флаг, чтобы анимация работала только один раз
+    animationStarted = true;
+
     // Создаем новые частицы и добавляем их в массив
     for (let i = 0; i < 100; i++) {
       particles.push(createParticle());
@@ -95,6 +101,11 @@
       }
     }
 
-    // Повторяем анимацию
-    requestAnimationFrame(animateFirework);
+    // Если еще есть частицы, продолжаем анимацию
+    if (particles.length > 0) {
+      requestAnimationFrame(animateFirework);
+    } else {
+      // Сбрасываем флаг, чтобы анимация могла быть запущена снова
+      animationStarted = false;
+    }
   }
