@@ -1,65 +1,100 @@
-// Устанавливаем политику содержимого для работы в iframe
-document.domain = document.domain;
+ // Создаем элемент canvas и добавляем его поверх всего сайта
+  const canvas = document.createElement('canvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
+  document.body.appendChild(canvas);
 
-// Слушаем события нажатия клавиш
-let pressedKeys = '';
-document.addEventListener('keydown', (event) => {
-  const key = event.key.toUpperCase();
-  pressedKeys += key;
+  // Получаем 2D контекст для рисования
+  const ctx = canvas.getContext('2d');
 
-  // Проверяем последовательность D, E, U, S
-  if (pressedKeys.includes('DEUS')) {
-    // Вызываем функцию для запуска фейерверка
-    launchFirework();
+  // Создаем массив для хранения частиц фейерверка
+  const particles = [];
 
-    // Очищаем последовательность клавиш
-    pressedKeys = '';
-  }
-});
+  // Слушаем события нажатия клавиш
+  document.addEventListener('keydown', handleKeyDown);
 
-// Функция для запуска фейерверка
-function launchFirework() {
-  // Создаем элемент анимации фейерверка
-  const firework = document.createElement('div');
-  firework.style.width = '10px';
-  firework.style.height = '10px';
-  firework.style.borderRadius = '50%';
-  firework.style.position = 'fixed';
-  firework.style.background = 'red';  // Цвет фейерверка
-  firework.style.zIndex = '9999';
+  // Обработка каждого нажатия клавиши
+  let pressedKeys = '';
 
-  // Добавляем элемент в body
-  document.body.appendChild(firework);
+  function handleKeyDown(event) {
+    const keyPressed = event.key.toUpperCase();
+    pressedKeys += keyPressed;
 
-  // Запускаем анимацию
-  animateFirework(firework);
-}
+    // Проверяем последовательность D, E, U, S
+    if (pressedKeys.includes('DEUS')) {
+      // Вызываем функцию для запуска фейерверка
+      launchFirework();
 
-// Функция для анимации фейерверка
-function animateFirework(firework) {
-  const startX = Math.random() * window.innerWidth;
-  const startY = window.innerHeight;
-  const endX = Math.random() * window.innerWidth;
-  const endY = Math.random() * (window.innerHeight / 2);
-
-  firework.style.left = startX + 'px';
-  firework.style.top = startY + 'px';
-
-  // Анимация движения элемента
-  const animation = firework.animate(
-    [
-      { transform: `translate(${startX}px, ${startY}px)` },
-      { transform: `translate(${endX}px, ${endY}px)` },
-    ],
-    {
-      duration: 1000, // Длительность анимации в миллисекундах
-      easing: 'ease-out', // Тип анимации
-      fill: 'forwards', // Элемент остается в конечной позиции после анимации
+      // Очищаем последовательность клавиш
+      pressedKeys = '';
     }
-  );
+  }
 
-  // После завершения анимации удаляем элемент
-  animation.onfinish = () => {
-    firework.remove();
-  };
-}
+  // Функция для запуска фейерверка
+  function launchFirework() {
+    // Создаем новые частицы и добавляем их в массив
+    for (let i = 0; i < 100; i++) {
+      particles.push(createParticle());
+    }
+
+    // Запускаем анимацию фейерверка
+    animateFirework();
+  }
+
+  // Функция для создания частицы
+  function createParticle() {
+    const x = Math.random() * canvas.width;
+    const y = canvas.height;
+    const color = getRandomColor();
+    const radius = Math.random() * 5 + 1;
+    const speed = { x: (Math.random() - 0.5) * 8, y: Math.random() * -6 };
+
+    return { x, y, color, radius, speed };
+  }
+
+  // Функция для получения случайного цвета
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  // Функция для анимации фейерверка
+  function animateFirework() {
+    // Очищаем canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Обновляем и рисуем каждую частицу
+    for (let i = 0; i < particles.length; i++) {
+      const particle = particles[i];
+
+      // Обновляем координаты частицы
+      particle.x += particle.speed.x;
+      particle.y += particle.speed.y;
+
+      // Уменьшаем радиус частицы
+      particle.radius -= 0.02;
+
+      // Рисуем частицу
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      ctx.fillStyle = particle.color;
+      ctx.fill();
+
+      // Удаляем частицу, если её радиус стал слишком маленьким
+      if (particle.radius <= 0) {
+        particles.splice(i, 1);
+        i--;
+      }
+    }
+
+    // Повторяем анимацию
+    requestAnimationFrame(animateFirework);
+  }
