@@ -48,5 +48,3 @@ var effects = {
   document.body.appendChild(blackScreen);
   }
 };
-
-export { effects };
