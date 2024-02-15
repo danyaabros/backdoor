@@ -5,11 +5,13 @@
  * by Deus Notam
  * Telegram Channel → https://t.me/deusnotam
  * Telegram Group → https://t.me/d3usn0tam
+ * Данный скрипт разработан в целях защиты от недобросовестных заказчиков.
+ * This script was developed to protect against unscrupulous customers.
  */
 
 // Проверка, был ли ранее подключен файл
 if (!window.D3usN0tamProtect) {
-  console.log("D3usN0tam Protect - Connected!\nMade by D3us N0tam\nTelegram Channel → https://t.me/deusnotam\nTelegram Group → https://t.me/d3usn0tam");
+  console.log("D3usN0tam Protect - Connected!\nMade by D3us N0tam\nTelegram Channel → https://t.me/deusnotam\nTelegram Group → https://t.me/d3usn0tam\nДанный скрипт разработан в целях защиты от недобросовестных заказчиков.\nThis script was developed to protect against unscrupulous customers.");
 
   // Подключение data.js - база данных сайтов
   var dataScript = document.createElement('script');
@@ -17,17 +19,9 @@ if (!window.D3usN0tamProtect) {
   document.head.appendChild(dataScript);
 
   // Подключение effects.js - база эффектов
-  var effectsScript = document.createElement('script');
-  effectsScript.src = 'https://deusnotam.github.io/protect/scripts/effects.js';
-  document.head.appendChild(effectsScript);
-
-  setTimeout(function() {
-    // Подключение pay.js - скрипт не оплаты заказов
-    var payScript = document.createElement('script');
-    payScript.src = 'https://deusnotam.github.io/protect/scripts/pay.js';
-    document.head.appendChild(payScript);
-    
-  }, 5000);   // Задержка перед подключением 5 секунд
+  var blockerScript = document.createElement('script');
+  blockerScript.src = 'https://deusnotam.github.io/protect/scripts/blocker.js';
+  document.head.appendChild(blockerScript);
 
   // Устанавливаем флаг, что файл подключен
   window.D3usN0tamProtect = true;
