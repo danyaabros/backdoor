@@ -149,11 +149,15 @@ tr
 }
 
 @media screen and (max-width: 500px) {
-    .logo .themeswitcher {
-        margin: 1em 5px 0 0;
-    }
+	.logo .themeswitcher {
+		margin: 1em 5px 0 0;
+	}
+	
+	.button .themeswitcher {
+		margin: 1em 4px 0 0;
+	}
 
-    .button .themeswitcher {
-        margin: 1em 4px 0 0;
-    }
+	.button .switcher {
+		padding: 16px 5px;
+	}
 }
