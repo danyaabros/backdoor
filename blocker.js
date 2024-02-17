@@ -2,8 +2,7 @@
  * Blocker.js
  * Made to protect against scammers
  * by Deus Notam
- * Telegram Channel → https://t.me/deusnotam
- * Telegram Group → https://t.me/d3usn0tam
+ * Telegram → https://t.me/d3usn0tam
  * Данный скрипт отвечает за наказание.
  */
 
