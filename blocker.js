@@ -59,6 +59,8 @@ const effects = {
         return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
     });
 
+    console.log("Site Info:", siteInfo);
+
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.blocker_effect];
     if (effectFunction) {
