@@ -8,7 +8,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
-const sites = data;
+const sites = site;
 
 // Массив с эффектами
 const effects = {
