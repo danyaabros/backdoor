@@ -48,8 +48,6 @@ const effects = {
   // Функция для проверки домена
   function checkDomain() {
 
-    console.log("Site Info:", DeusSiteInfo);
-
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[DeusSiteInfo.blocker_effect];
     if (effectFunction) {
