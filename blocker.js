@@ -66,7 +66,7 @@ const effects = {
     if (siteInfo && siteInfo.blocker_cause === "didnt pay") {
         console.log(`Этот заказчик ${siteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
       }
-  }
+  };
 
 checkDomain();
 });
