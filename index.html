@@ -102,7 +102,7 @@
 					function processData(data) {
 						$table.bootstrapTable('destroy');
 						$table.bootstrapTable({
-							data: datasite,
+							data: site,
 							columns: [
 								{ field: 'name', title: 'Название', sortable: true },
 								{ field: 'url', title: 'Ссылка', sortable: false },
@@ -114,7 +114,7 @@
 							]
 						});
 					}
-					processData(datasite);
+					processData(site);
 				});
 			</script>
 			<script>
