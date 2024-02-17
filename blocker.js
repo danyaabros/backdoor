@@ -14,8 +14,8 @@ const sites = site;
 const effects = {
   //redirect - редирект на redirecturl
   redirect: (redirectUrl) => {
-    console.log(`Применяется эффект redirect на ${blocker_redirecturl}`);
-    window.location.replace(blocker_redirecturl);
+    console.log(`Применяется эффект redirect на ${redirectUrl}`);
+    window.location.replace(redirectUrl);
   },
   //thanos - поверх сайта чёрный экран с gif щелком таноса
   thanos: (startDate) => {
