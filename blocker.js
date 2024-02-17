@@ -58,7 +58,7 @@ const effects = {
         
     // Проверка, если case у домена равен "didnt pay"
     if (DeusSiteInfo && DeusSiteInfo.blocker_cause === "didnt pay") {
-        console.log(`Этот заказчик ${DeusSiteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
+        console.log(`Этот заказчик ${DeusSiteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam\n\nThis customer ${DeusSiteInfo.blocker_date} did not pay for the work ordered, so be careful not to remove this code. For all questions, write here \nTelegram Group → https://t.me/d3usn0tam`);
       }
   }
 
