@@ -6,7 +6,6 @@
  * Данный скрипт отвечает за наказание.
  */
 
-document.addEventListener("DOMContentLoaded", function() {
 // Массив с сайтами и параметрами
 const sites = site;
 
@@ -72,4 +71,3 @@ const effects = {
 
 // Вызов функции для проверки домена
 checkDomain();
-});
