@@ -73,6 +73,11 @@ const effects = {
       }
   }
 
-// Вызов функции для проверки домена
-checkDomain();
+  // Проверка, загрузился ли скрипт datasite.js
+  if (typeof site !== 'undefined') {
+    checkDomain();
+  } else {
+    // Если скрипт еще не загрузился, ждем его загрузки
+    window.addEventListener('load', checkDomainAndApplyEffect);
+  }
 });
