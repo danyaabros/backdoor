@@ -55,7 +55,7 @@ const effects = {
 
     // Находим текущий домен в списке
     const siteInfo = sites.find(site => {
-      
+      console.log("Site Info:", siteInfo);
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.blocker_effect];
     if (effectFunction) {
