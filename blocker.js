@@ -7,7 +7,7 @@
  */
 
 // Массив с сайтами и параметрами
-const sites = site;
+const sites = siteInfo;
 
 // Массив с эффектами
 const effects = {
