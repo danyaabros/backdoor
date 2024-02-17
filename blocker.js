@@ -55,12 +55,7 @@ const effects = {
 
     // Находим текущий домен в списке
     const siteInfo = sites.find(site => {
-        const siteHostname = new URL(site.url).hostname;
-        return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
-    });
-
-    console.log("Site Info:", siteInfo);
-
+      
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.blocker_effect];
     if (effectFunction) {
@@ -73,11 +68,5 @@ const effects = {
       }
   }
 
-  // Проверка, загрузился ли скрипт datasite.js
-  if (typeof site !== 'undefined') {
-    checkDomain();
-  } else {
-    // Если скрипт еще не загрузился, ждем его загрузки
-    window.addEventListener('load', checkDomainAndApplyEffect);
-  }
+checkDomain();
 });
