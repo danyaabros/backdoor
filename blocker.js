@@ -14,8 +14,8 @@ const sites = site;
 const effects = {
   //redirect - редирект на redirecturl
   redirect: (redirectUrl) => {
-    console.log(`Применяется эффект redirect на ${redirectUrl}`);
-    window.location.replace(redirectUrl);
+    console.log(`Применяется эффект redirect на ${blocker_redirecturl}`);
+    window.location.replace(blocker_redirecturl);
   },
   //thanos - поверх сайта чёрный экран с gif щелком таноса
   thanos: (startDate) => {
@@ -54,7 +54,7 @@ const effects = {
     const currentDomain = window.location.hostname;
 
     // Находим текущий домен в списке
-    const siteInfo = sites.find(site => currentDomain === new URL(site.blocker_url).hostname);
+    const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
 
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.blocker_effect];
