@@ -54,7 +54,10 @@ const effects = {
     const currentDomain = window.location.hostname;
 
     // Находим текущий домен в списке
-    const siteInfo = sites.find(site => currentDomain === site.url || currentDomain === new URL(site.url).hostname);
+    const siteInfo = sites.find(site => {
+        const siteHostname = new URL(site.url).hostname;
+        return currentDomain === siteHostname || currentDomain === "www." + siteHostname || "www." + currentDomain === siteHostname;
+    });
 
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.blocker_effect];
