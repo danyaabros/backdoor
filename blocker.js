@@ -12,9 +12,6 @@ const sites = site;
 
 // Массив с эффектами
 const effects = {
-  //Ничего
-  none: () => {
-  },
   //redirect - редирект на redirecturl
   redirect: (redirectUrl) => {
     console.log(`Применяется эффект redirect на ${redirectUrl}`);
