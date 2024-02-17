@@ -6,9 +6,6 @@
  * Данный скрипт отвечает за наказание.
  */
 
-// Массив с сайтами и параметрами
-const sites = siteInfo;
-
 // Массив с эффектами
 const effects = {
   //redirect - редирект на redirecturl
@@ -50,10 +47,6 @@ const effects = {
     
   // Функция для проверки домена
   function checkDomain() {
-    const currentDomain = window.location.hostname;
-
-    // Находим текущий домен в списке
-    const siteInfo = sites.find;
 
     console.log("Site Info:", siteInfo);
 
