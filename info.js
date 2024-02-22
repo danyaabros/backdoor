@@ -91,4 +91,4 @@ d3usnotamBlockerA.appendChild(d3usn0tamBlockerDiv1);
 d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerDiv2);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerDiv3);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerSpan);
-d3usn0taminfo.appendChild(d3usn0tamBlockerImg);
+d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerImg);
