@@ -25,7 +25,7 @@ d3usnotamBlockerA.style.top = '100px';
 d3usnotamBlockerA.style.visibility = 'hidden';
 
 // Общее тело
-d3usn0tamBlockerDiv1.style.position = 'absolute';
+d3usn0tamBlockerDiv1.style.position = 'fixed';
 d3usn0tamBlockerDiv1.style.top = '0';
 d3usn0tamBlockerDiv1.style.left = '50%';
 d3usn0tamBlockerDiv1.style.transform = 'translateX(-50%)';
