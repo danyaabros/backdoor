@@ -8,12 +8,9 @@ const d3usn0tamBlockerImg = document.createElement('img');
 
 // Общее тело
 d3usnotamBlockerA.href = 'https://deusnotam.github.io';
-d3usnotamBlockerA.style.position = 'fixed';
-d3usnotamBlockerA.style.top = '0';
-d3usnotamBlockerA.style.left = '50%';
 
 // Обертка
-d3usn0tamBlockerDiv1.style.position = 'absolute';
+d3usn0tamBlockerDiv1.style.position = 'fixed';
 d3usn0tamBlockerDiv1.style.top = '0';
 d3usn0tamBlockerDiv1.style.left = '50%';
 d3usn0tamBlockerDiv1.style.transform = 'translateX(-50%)';
@@ -49,7 +46,7 @@ d3usn0tamBlockerSpan.style.width = '350px';
 d3usn0tamBlockerSpan.style.textAlign = 'center';
 d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
 d3usn0tamBlockerSpan.style.top = '50px';
-d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br><br>D3usN0tam<br><br>Подробности на сайте';
+d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br>D3usN0tam<br>Подробности на сайте';
 
 // Обертка для текста с подложкой на анимацию
 d3usn0tamBlockerDiv2.style.position = 'absolute';
