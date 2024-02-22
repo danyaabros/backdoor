@@ -69,17 +69,26 @@ document.head.insertAdjacentHTML('beforeend', `
             0% {
                 color: red;
             }
-            25% {
-                color: blue;
-            }
-            50% {
-                color: green;
-            }
-            75% {
+            15% {
                 color: orange;
             }
+            30% {
+                color: yellow;
+            }
+            45% {
+                color: green;
+            }
+            60% {
+                color: lightblue;
+            }
+            75% {
+                color: blue;
+            }
+            90% {
+                color: violet;
+            }
             100% {
-                color: red;
+                color: purple;
             }
         }
     </style>
