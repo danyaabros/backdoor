@@ -5,7 +5,6 @@ const d3usn0tamBlockerDiv2 = document.createElement('div');
 const d3usn0tamBlockerDiv3 = document.createElement('div');
 const d3usn0tamBlockerSpan = document.createElement('span');
 const d3usn0tamBlockerImg = document.createElement('img');
-const d3usn0tamBlockerP = document.createElement('p');
 
 // Общее тело
 d3usnotamBlockerA.href = 'https://deusnotam.github.io';
