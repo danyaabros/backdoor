@@ -61,8 +61,6 @@ d3usnotamBlockerA.addEventListener('mouseout', () => {
     d3usn0tamBlockerDiv2.style.top = '-100px';
 });
 
-document.querySelector('.d3usn0taminfo').style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
-
 document.head.insertAdjacentHTML('beforeend', `
     <style>
         @keyframes D3usN0tamColorTransition {
@@ -92,3 +90,5 @@ d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerDiv2);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerDiv3);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerSpan);
 d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerImg);
+
+document.querySelector('.d3usn0taminfo').style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
