@@ -9,13 +9,13 @@ const d3usn0tamBlockerImg = document.createElement('img');
 // Ссылка
 d3usnotamBlockerA.href = 'https://deusnotam.github.io';
 d3usnotamBlockerA.textContent = 'D3usN0tam';
-d3usnotamBlockerA.classList.add('d3usn0taminfo');
-d3usn0tamBlockerSpan.style.zIndex = '2';
-d3usn0tamBlockerSpan.style.position = 'absolute';
-d3usn0tamBlockerSpan.style.transform = 'translateX(-50%)';
-d3usn0tamBlockerSpan.style.textAlign = 'center';
-d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
-d3usn0tamBlockerSpan.style.top = '100px';
+d3usnotamBlockerA.style.zIndex = '2';
+d3usnotamBlockerA.style.position = 'absolute';
+d3usnotamBlockerA.style.transform = 'translateX(-50%)';
+d3usnotamBlockerA.style.textAlign = 'center';
+d3usnotamBlockerA.style.fontFamily = 'Comfortaa, cursive';
+d3usnotamBlockerA.style.top = '100px';
+d3usnotamBlockerA.style.visibility = 'hidden';
 
 // Общее тело
 d3usn0tamBlockerDiv1.style.position = 'absolute';
@@ -54,6 +54,7 @@ d3usn0tamBlockerSpan.style.width = '350px';
 d3usn0tamBlockerSpan.style.textAlign = 'center';
 d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
 d3usn0tamBlockerSpan.style.top = '50px';
+d3usn0tamBlockerSpan.style.visibility = 'hidden';
 d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br>Подробности на сайте';
 
 // Обертка для текста с подложкой на анимацию
@@ -63,10 +64,14 @@ d3usn0tamBlockerDiv2.style.transition = 'top 0.3s ease';
 
 d3usn0tamBlockerDiv1.addEventListener('mouseover', () => {
     d3usn0tamBlockerDiv2.style.top = '0';
+    d3usnotamBlockerA.style.visibility = 'visible';
+    d3usn0tamBlockerSpan.style.visibility = 'visible';
 });
 
 d3usn0tamBlockerDiv1.addEventListener('mouseout', () => {
     d3usn0tamBlockerDiv2.style.top = '-120px';
+    d3usnotamBlockerA.style.visibility = 'hidden';
+    d3usn0tamBlockerSpan.style.visibility = 'hidden';
 });
 
 document.head.insertAdjacentHTML('beforeend', `
@@ -102,11 +107,10 @@ document.head.insertAdjacentHTML('beforeend', `
 
 // Добавляем элементы в DOM
 document.body.appendChild(d3usn0tamBlockerDiv1);
-d3usn0tamBlockerDiv2.appendChild(d3usnotamBlockerA);
 d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerDiv2);
 d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerImg);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerDiv3);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerSpan);
 d3usn0tamBlockerDiv2.appendChild(d3usnotamBlockerA);
 
-document.querySelector('.d3usn0taminfo').style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
+d3usnotamBlockerA.style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
