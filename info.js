@@ -1,63 +1,68 @@
 // Создаем элементы
-const a = document.createElement('a');
-const d3usn0taminfo = document.createElement('div');
-const text = document.createElement('div');
-const circle = document.createElement('div');
-const span = document.createElement('span');
-const img = document.createElement('img');
-const p = document.createElement('p');
+const d3usnotamBlockerA = document.createElement('a');
+const d3usn0tamBlockerDiv1 = document.createElement('div');
+const d3usn0tamBlockerDiv2 = document.createElement('div');
+const d3usn0tamBlockerDiv3 = document.createElement('div');
+const d3usn0tamBlockerSpan = document.createElement('span');
+const d3usn0tamBlockerImg = document.createElement('img');
+const d3usn0tamBlockerP = document.createElement('p');
 
-// Устанавливаем атрибуты и стили
-a.href = 'https://deusnotam.github.io';
+// Общее тело
+d3usnotamBlockerA.href = 'https://deusnotam.github.io';
 
-d3usn0taminfo.style.position = 'absolute';
-d3usn0taminfo.style.top = '0';
-d3usn0taminfo.style.left = '50%';
-d3usn0taminfo.style.transform = 'translateX(-50%)';
-d3usn0taminfo.style.display = 'flex';
-d3usn0taminfo.style.zIndex = '9999999999';
+// Обертка
+d3usn0tamBlockerDiv1.style.position = 'absolute';
+d3usn0tamBlockerDiv1.style.top = '0';
+d3usn0tamBlockerDiv1.style.left = '50%';
+d3usn0tamBlockerDiv1.style.transform = 'translateX(-50%)';
+d3usn0tamBlockerDiv1.style.display = 'flex';
+d3usn0tamBlockerDiv1.style.zIndex = '9999999999';
 
-img.src = 'https://deusnotam.github.io/site/img/logo.jpeg';
-img.style.width = '50px';
-img.style.height = '50px';
-img.style.position = 'absolute';
-img.style.transform = 'translateX(-50%)';
-img.style.zIndex = '2';
-img.style.borderRadius = '10px';
+// Логотип
+d3usn0tamBlockerImg.src = 'https://deusnotam.github.io/site/img/logo.jpeg';
+d3usn0tamBlockerImg.style.width = '50px';
+d3usn0tamBlockerImg.style.height = '50px';
+d3usn0tamBlockerImg.style.position = 'absolute';
+d3usn0tamBlockerImg.style.transform = 'translateX(-50%)';
+d3usn0tamBlockerImg.style.zIndex = '2';
+d3usn0tamBlockerImg.style.borderRadius = '10px';
 
-circle.style.backgroundColor = '#040404';
-circle.style.width = '400px';
-circle.style.height = '400px';
-circle.style.position = 'absolute';
-circle.style.transform = 'translateX(-50%)';
-circle.style.top = '-225px';
-circle.style.borderRadius = '50%';
-circle.style.zIndex = '1';
-circle.style.border = '1px solid white';
+// Круг, подложка
+d3usn0tamBlockerDiv3.style.backgroundColor = '#040404';
+d3usn0tamBlockerDiv3.style.width = '400px';
+d3usn0tamBlockerDiv3.style.height = '400px';
+d3usn0tamBlockerDiv3.style.position = 'absolute';
+d3usn0tamBlockerDiv3.style.transform = 'translateX(-50%)';
+d3usn0tamBlockerDiv3.style.top = '-225px';
+d3usn0tamBlockerDiv3.style.borderRadius = '50%';
+d3usn0tamBlockerDiv3.style.zIndex = '1';
+d3usn0tamBlockerDiv3.style.border = '1px solid white';
 
-span.style.color = 'white';
-span.style.zIndex = '2';
-span.style.position = 'absolute';
-span.style.transform = 'translateX(-50%)';
-span.style.width = '350px';
-span.style.textAlign = 'center';
-span.style.fontFamily = 'Comfortaa, cursive';
-span.style.top = '50px';
-span.innerHTML = 'Данный сайт заблокирован системой<br><p>D3usN0tam</p>Подробности на сайте';
+// Текст
+d3usn0tamBlockerSpan.style.color = 'white';
+d3usn0tamBlockerSpan.style.zIndex = '2';
+d3usn0tamBlockerSpan.style.position = 'absolute';
+d3usn0tamBlockerSpan.style.transform = 'translateX(-50%)';
+d3usn0tamBlockerSpan.style.width = '350px';
+d3usn0tamBlockerSpan.style.textAlign = 'center';
+d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
+d3usn0tamBlockerSpan.style.top = '50px';
+d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br><p>D3usN0tam</p>Подробности на сайте';
 
-text.style.position = 'absolute';
-text.style.top = '-100px';
-text.style.transition = 'top 0.3s ease';
+// Обертка для текста с подложкой на анимацию
+d3usn0tamBlockerDiv2.style.position = 'absolute';
+d3usn0tamBlockerDiv2.style.top = '-100px';
+d3usn0tamBlockerDiv2.style.transition = 'top 0.3s ease';
 
-a.addEventListener('mouseover', () => {
-    text.style.top = '0';
+d3usnotamBlockerA.addEventListener('mouseover', () => {
+    d3usn0tamBlockerDiv2.style.top = '0';
 });
 
-a.addEventListener('mouseout', () => {
-    text.style.top = '-100px';
+d3usnotamBlockerA.addEventListener('mouseout', () => {
+    d3usn0tamBlockerDiv2.style.top = '-100px';
 });
 
-p.style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
+d3usn0tamBlockerP.style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
 
 document.head.insertAdjacentHTML('beforeend', `
     <style>
@@ -82,10 +87,10 @@ document.head.insertAdjacentHTML('beforeend', `
 `);
 
 // Добавляем элементы в DOM
-document.body.appendChild(a);
-a.appendChild(d3usn0taminfo);
-d3usn0taminfo.appendChild(text);
-text.appendChild(circle);
-text.appendChild(span);
-d3usn0taminfo.appendChild(img);
-document.body.appendChild(p);  // Добавляем элемент <p> в DOM
+document.body.appendChild(d3usnotamBlockerA);
+d3usnotamBlockerA.appendChild(d3usn0tamBlockerDiv1);
+d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerDiv2);
+d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerDiv3);
+d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerSpan);
+d3usn0taminfo.appendChild(d3usn0tamBlockerImg);
+document.body.appendChild(d3usn0tamBlockerP);
