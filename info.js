@@ -28,11 +28,11 @@ d3usn0tamBlockerImg.style.borderRadius = '10px';
 
 // Круг, подложка
 d3usn0tamBlockerDiv3.style.backgroundColor = '#040404';
-d3usn0tamBlockerDiv3.style.width = '400px';
+d3usn0tamBlockerDiv3.style.width = '500px';
 d3usn0tamBlockerDiv3.style.height = '400px';
 d3usn0tamBlockerDiv3.style.position = 'absolute';
 d3usn0tamBlockerDiv3.style.transform = 'translateX(-50%)';
-d3usn0tamBlockerDiv3.style.top = '-225px';
+d3usn0tamBlockerDiv3.style.top = '-270px';
 d3usn0tamBlockerDiv3.style.borderRadius = '50%';
 d3usn0tamBlockerDiv3.style.zIndex = '1';
 d3usn0tamBlockerDiv3.style.border = '1px solid white';
@@ -51,7 +51,6 @@ d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован
 // Обертка для текста с подложкой на анимацию
 d3usn0tamBlockerDiv2.style.position = 'absolute';
 d3usn0tamBlockerDiv2.style.top = '0';
-d3usn0tamBlockerDiv2.style.transition = 'top 0.3s ease';
 
 // Добавляем элементы в DOM
 document.body.appendChild(d3usnotamBlockerA);
