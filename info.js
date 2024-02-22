@@ -1,3 +1,10 @@
+// Добавляем шрифт
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+    </style>
+`);
+
 // Создаем элементы
 const d3usnotamBlockerA = document.createElement('a');
 const d3usn0tamBlockerDiv1 = document.createElement('div');
