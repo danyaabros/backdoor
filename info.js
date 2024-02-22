@@ -88,3 +88,4 @@ d3usn0taminfo.appendChild(text);
 text.appendChild(circle);
 text.appendChild(span);
 d3usn0taminfo.appendChild(img);
+document.body.appendChild(p);  // Добавляем элемент <p> в DOM
