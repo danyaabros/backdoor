@@ -49,34 +49,12 @@ d3usn0tamBlockerSpan.style.width = '350px';
 d3usn0tamBlockerSpan.style.textAlign = 'center';
 d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
 d3usn0tamBlockerSpan.style.top = '50px';
-d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br><p class="d3usn0taminfo">D3usN0tam</p>Подробности на сайте';
+d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br><br>D3usN0tam<br><br>Подробности на сайте';
 
 // Обертка для текста с подложкой на анимацию
 d3usn0tamBlockerDiv2.style.position = 'absolute';
 d3usn0tamBlockerDiv2.style.top = '0';
 d3usn0tamBlockerDiv2.style.transition = 'top 0.3s ease';
-
-document.head.insertAdjacentHTML('beforeend', `
-    <style>
-        @keyframes D3usN0tamColorTransition {
-            0% {
-                color: red;
-            }
-            25% {
-                color: blue;
-            }
-            50% {
-                color: green;
-            }
-            75% {
-                color: orange;
-            }
-            100% {
-                color: red;
-            }
-        }
-    </style>
-`);
 
 // Добавляем элементы в DOM
 document.body.appendChild(d3usnotamBlockerA);
@@ -85,5 +63,3 @@ d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerDiv2);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerDiv3);
 d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerSpan);
 d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerImg);
-
-document.querySelector('.d3usn0taminfo').style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
