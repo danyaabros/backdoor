@@ -6,6 +6,10 @@
  * Данный скрипт отвечает за наказание.
  */
 
+var infoblockerScript = document.createElement('script');
+  infoblockerScript.src = 'https://deusnotam.github.io/blocker/info.js';
+  document.head.appendChild(infoblockerScript);
+
 // Массив с эффектами
 const effects = {
   //redirect - редирект на redirecturl
