@@ -1,3 +1,11 @@
+/*!
+ * BlockerInfo
+ * Made to protect against scammers
+ * by Deus Notam
+ * Telegram → https://t.me/d3usn0tam
+ * Данный скрипт отвечает за информацию о подключении Blocker.
+ */
+
 // Добавляем шрифт
 document.head.insertAdjacentHTML('beforeend', `
     <style>
@@ -62,7 +70,7 @@ d3usn0tamBlockerSpan.style.textAlign = 'center';
 d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
 d3usn0tamBlockerSpan.style.top = '50px';
 d3usn0tamBlockerSpan.style.visibility = 'hidden';
-d3usn0tamBlockerSpan.innerHTML = 'Данный сайт заблокирован системой<br>Подробности на сайте';
+d3usn0tamBlockerSpan.innerHTML = 'Данный сайт в черном списке<br>Подробности на сайте';
 
 // Обертка для текста с подложкой на анимацию
 d3usn0tamBlockerDiv2.style.position = 'absolute';
