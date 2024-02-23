@@ -21,11 +21,14 @@ d3us_Noti_Body.style.display = 'flex';
 d3us_Noti_Body.style.flexDirection = 'column';
 d3us_Noti_Body.style.isolation = 'isolate';
 d3us_Noti_Body.style.position = 'fixed';
+d3us_Noti_Body.style.top = '1rem';
+d3us_Noti_Body.style.right = '1rem';
 d3us_Noti_Body.style.width = '18rem';
 d3us_Noti_Body.style.height = 'auto';
 d3us_Noti_Body.style.background = '#29292c';
 d3us_Noti_Body.style.borderRadius = '1rem';
 d3us_Noti_Body.style.overflow = 'hidden';
+d3us_Noti_Body.style.zIndex = '999999999999';
 
 // Тело начало
 const d3us_Noti_BodyBefore = document.createElement('div');
