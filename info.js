@@ -6,126 +6,157 @@
  * Данный скрипт отвечает за информацию о подключении Blocker.
  */
 
-// Добавляем шрифт
+// Добавляем шрифт и стиль ссылки
 document.head.insertAdjacentHTML('beforeend', `
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     </style>
 `);
 
-// Создаем элементы
-const d3usnotamBlockerA = document.createElement('a');
-const d3usn0tamBlockerDiv1 = document.createElement('div');
-const d3usn0tamBlockerDiv2 = document.createElement('div');
-const d3usn0tamBlockerDiv3 = document.createElement('div');
-const d3usn0tamBlockerSpan = document.createElement('span');
-const d3usn0tamBlockerImg = document.createElement('img');
+// Тело
+const d3us_Noti_Body = document.createElement('div');
+d3us_Noti_Body.style.fontFamily = 'Inter';
+d3us_Noti_Body.style.fontSize = '16px';
+d3us_Noti_Body.style.display = 'flex';
+d3us_Noti_Body.style.flexDirection = 'column';
+d3us_Noti_Body.style.isolation = 'isolate';
+d3us_Noti_Body.style.position = 'fixed';
+d3us_Noti_Body.style.width = '18rem';
+d3us_Noti_Body.style.height = 'auto';
+d3us_Noti_Body.style.background = '#29292c';
+d3us_Noti_Body.style.borderRadius = '1rem';
+d3us_Noti_Body.style.overflow = 'hidden';
 
-// Ссылка
-d3usnotamBlockerA.href = 'https://deusnotam.github.io';
-d3usnotamBlockerA.textContent = 'D3usN0tam';
-d3usnotamBlockerA.style.zIndex = '2';
-d3usnotamBlockerA.style.position = 'absolute';
-d3usnotamBlockerA.style.transform = 'translateX(-50%)';
-d3usnotamBlockerA.style.textAlign = 'center';
-d3usnotamBlockerA.style.fontFamily = 'Comfortaa, cursive';
-d3usnotamBlockerA.style.top = '100px';
-d3usnotamBlockerA.style.visibility = 'hidden';
+// Тело начало
+const d3us_Noti_BodyBefore = document.createElement('div');
+d3us_Noti_BodyBefore.style.position = 'absolute';
+d3us_Noti_BodyBefore.style.content = '';
+d3us_Noti_BodyBefore.style.inset = '0.0625rem';
+d3us_Noti_BodyBefore.style.borderRadius = '0.9375rem';
+d3us_Noti_BodyBefore.style.background = '#18181b';
+d3us_Noti_BodyBefore.style.zIndex = '2';
 
-// Общее тело
-d3usn0tamBlockerDiv1.style.position = 'fixed';
-d3usn0tamBlockerDiv1.style.top = '0';
-d3usn0tamBlockerDiv1.style.left = '50%';
-d3usn0tamBlockerDiv1.style.transform = 'translateX(-50%)';
-d3usn0tamBlockerDiv1.style.display = 'flex';
-d3usn0tamBlockerDiv1.style.zIndex = '9999999999';
+// Тело конец
+const d3us_Noti_BodyAfter = document.createElement('div');
+d3us_Noti_BodyAfter.style.position = 'absolute';
+d3us_Noti_BodyAfter.style.content = '';
+d3us_Noti_BodyAfter.style.width = '0.25rem';
+d3us_Noti_BodyAfter.style.inset = '0.65rem auto 0.65rem 0.5rem';
+d3us_Noti_BodyAfter.style.borderRadius = '0.125rem';
+d3us_Noti_BodyAfter.style.background = 'linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff)';
+d3us_Noti_BodyAfter.style.transition = 'transform 300ms ease';
+d3us_Noti_BodyAfter.style.zIndex = '4';
 
-// Логотип
-d3usn0tamBlockerImg.src = 'https://deusnotam.github.io/site/img/logo.jpeg';
-d3usn0tamBlockerImg.style.width = '50px';
-d3usn0tamBlockerImg.style.height = '50px';
-d3usn0tamBlockerImg.style.position = 'absolute';
-d3usn0tamBlockerImg.style.transform = 'translateX(-50%)';
-d3usn0tamBlockerImg.style.zIndex = '2';
-d3usn0tamBlockerImg.style.borderRadius = '10px';
+// Мэш
+const d3us_Noti_BodyMesh = document.createElement('div');
+d3us_Noti_BodyMesh.style.position = 'absolute';
+d3us_Noti_BodyMesh.style.width = '20rem';
+d3us_Noti_BodyMesh.style.height = '20rem';
+d3us_Noti_BodyMesh.style.transform = 'translate(-50%, -50%)';
+d3us_Noti_BodyMesh.style.background = 'radial-gradient(circle closest-side at center, white, transparent)';
+d3us_Noti_BodyMesh.style.opacity = '0';
+d3us_Noti_BodyMesh.style.transition = 'opacity 300ms ease';
+d3us_Noti_BodyMesh.style.zIndex = '3';
 
-// Круг, подложка
-d3usn0tamBlockerDiv3.style.backgroundColor = '#040404';
-d3usn0tamBlockerDiv3.style.width = '400px';
-d3usn0tamBlockerDiv3.style.height = '400px';
-d3usn0tamBlockerDiv3.style.position = 'absolute';
-d3usn0tamBlockerDiv3.style.transform = 'translateX(-50%)';
-d3usn0tamBlockerDiv3.style.top = '-225px';
-d3usn0tamBlockerDiv3.style.borderRadius = '50%';
-d3usn0tamBlockerDiv3.style.zIndex = '1';
-d3usn0tamBlockerDiv3.style.border = '1px solid white';
+// Глоу
+const d3us_Noti_BodyGlow = document.createElement('div');
+d3us_Noti_BodyGlow.style.position = 'absolute';
+d3us_Noti_BodyGlow.style.width = '20rem';
+d3us_Noti_BodyGlow.style.height = '20rem';
+d3us_Noti_BodyGlow.style.transform = 'translate(-50%, -50%)';
+d3us_Noti_BodyGlow.style.background = 'radial-gradient(circle closest-side at center, white, transparent)';
+d3us_Noti_BodyGlow.style.opacity = '0';
+d3us_Noti_BodyGlow.style.transition = 'opacity 300ms ease';
+d3us_Noti_BodyGlow.style.zIndex = '1';
+
+// Лого
+const d3us_Noti_BodyLogo = document.createElement('img');
+d3us_Noti_BodyLogo.src = 'https://deusnotam.github.io/site/img/logo.jpeg';
+d3us_Noti_BodyLogo.style.width = '40px';
+d3us_Noti_BodyLogo.style.borderRadius = '10px';
+d3us_Noti_BodyLogo.style.margin = '0.65rem 0.25rem 0 1.25rem';
+d3us_Noti_BodyLogo.style.transition = 'transform 300ms ease';
+d3us_Noti_BodyLogo.style.zIndex = '5';
+
+// Заголовок
+const d3us_Noti_BodyTitle = document.createElement('div');
+d3us_Noti_BodyTitle.textContent = DeusSiteInfo.noti_title;
+d3us_Noti_BodyTitle.style.color = '#32a6ff';
+d3us_Noti_BodyTitle.style.margin = '0.65rem 0.25rem 0.4rem 1.25rem';
+d3us_Noti_BodyTitle.style.fontWeight = '500';
+d3us_Noti_BodyTitle.style.fontSize = '1.1rem';
+d3us_Noti_BodyTitle.style.transition = 'transform 300ms ease';
+d3us_Noti_BodyTitle.style.zIndex = '5';
 
 // Текст
-d3usn0tamBlockerSpan.style.color = 'white';
-d3usn0tamBlockerSpan.style.zIndex = '2';
-d3usn0tamBlockerSpan.style.position = 'absolute';
-d3usn0tamBlockerSpan.style.transform = 'translateX(-50%)';
-d3usn0tamBlockerSpan.style.width = '350px';
-d3usn0tamBlockerSpan.style.textAlign = 'center';
-d3usn0tamBlockerSpan.style.fontFamily = 'Comfortaa, cursive';
-d3usn0tamBlockerSpan.style.top = '50px';
-d3usn0tamBlockerSpan.style.visibility = 'hidden';
-d3usn0tamBlockerSpan.innerHTML = 'Данный сайт в черном списке<br>Подробности на сайте';
+const d3us_Noti_BodyText = document.createElement('div');
+d3us_Noti_BodyText.innerHTML = DeusSiteInfo.noti_text;
+d3us_Noti_BodyText.style.color = '#99999d';
+d3us_Noti_BodyText.style.margin = '0 0.25rem 0.65rem 1.25rem';
+d3us_Noti_BodyText.style.transition = 'transform 300ms ease';
+d3us_Noti_BodyText.style.zIndex = '5';
 
-// Обертка для текста с подложкой на анимацию
-d3usn0tamBlockerDiv2.style.position = 'absolute';
-d3usn0tamBlockerDiv2.style.top = '-120px';
-d3usn0tamBlockerDiv2.style.transition = 'top 0.3s ease';
-
-d3usn0tamBlockerDiv1.addEventListener('mouseover', () => {
-    d3usn0tamBlockerDiv2.style.top = '0';
-    d3usnotamBlockerA.style.visibility = 'visible';
-    d3usn0tamBlockerSpan.style.visibility = 'visible';
+// Анимация
+d3us_Noti_Body.addEventListener('mouseover', () => {
+    d3us_Noti_BodyAfter.style.transform = 'translateX(0.15rem)';
+    d3us_Noti_BodyLogo.style.transform = 'translateX(0.15rem)';
+    d3us_Noti_BodyTitle.style.transform = 'translateX(0.15rem)';
+    d3us_Noti_BodyText.style.transform = 'translateX(0.25rem)';
+    d3us_Noti_BodyMesh.style.opacity = '0.1';
+    d3us_Noti_BodyGlow.style.opacity = '0.1';
 });
 
-d3usn0tamBlockerDiv1.addEventListener('mouseout', () => {
-    d3usn0tamBlockerDiv2.style.top = '-120px';
-    d3usnotamBlockerA.style.visibility = 'hidden';
-    d3usn0tamBlockerSpan.style.visibility = 'hidden';
+d3us_Noti_Body.addEventListener('mouseout', () => {
+    d3us_Noti_BodyAfter.style.transform = 'translateX(0)';
+    d3us_Noti_BodyLogo.style.transform = 'translateX(0)';
+    d3us_Noti_BodyTitle.style.transform = 'translateX(0)';
+    d3us_Noti_BodyText.style.transform = 'translateX(0)';
+    d3us_Noti_BodyMesh.style.opacity = '0';
+    d3us_Noti_BodyGlow.style.opacity = '0';
 });
-
-document.head.insertAdjacentHTML('beforeend', `
-    <style>
-        @keyframes D3usN0tamColorTransition {
-            0% {
-                color: red;
-            }
-            15% {
-                color: orange;
-            }
-            30% {
-                color: yellow;
-            }
-            45% {
-                color: green;
-            }
-            60% {
-                color: lightblue;
-            }
-            75% {
-                color: blue;
-            }
-            90% {
-                color: violet;
-            }
-            100% {
-                color: purple;
-            }
-        }
-    </style>
-`);
 
 // Добавляем элементы в DOM
-document.body.appendChild(d3usn0tamBlockerDiv1);
-d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerDiv2);
-d3usn0tamBlockerDiv1.appendChild(d3usn0tamBlockerImg);
-d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerDiv3);
-d3usn0tamBlockerDiv2.appendChild(d3usn0tamBlockerSpan);
-d3usn0tamBlockerDiv2.appendChild(d3usnotamBlockerA);
+document.body.appendChild(d3us_Noti_Body);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyBefore);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyAfter);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyMesh);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyGlow);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyLogo);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyTitle);
+d3us_Noti_Body.appendChild(d3us_Noti_BodyText);
 
-d3usnotamBlockerA.style.animation = 'D3usN0tamColorTransition 5s infinite alternate';
+// if the pen is in thumbnail view, scale it up
+if (location.pathname.match(/fullcpgrid/i) ? true : false) {
+  document.documentElement.style.fontSize = "48px"
+  d3us_Noti_Body.style.display = "none"
+}
+
+
+let isHovering = false
+
+d3us_Noti_Body.addEventListener("mousemove", (event) => {
+  const rect = d3us_Noti_Body.getBoundingClientRect()
+  const localX = (event.clientX - rect.left) / rect.width
+  const localY = (event.clientY - rect.top) / rect.height
+  
+  console.log(localX, localY)
+  d3us_Noti_BodyMesh.style.left = localX * 100 + "%"
+  d3us_Noti_BodyMesh.style.top = localY * 100 + "%"
+  
+  d3us_Noti_BodyGlow.style.left = localX * 100 + "%"
+  d3us_Noti_BodyGlow.style.top = localY * 100 + "%"
+  
+  if (isHovering) {
+    d3us_Noti_BodyMesh.style.transition = "inset 50ms linear, opacity 300ms ease";
+    d3us_Noti_BodyGlow.style.transition = "inset 50ms linear, opacity 300ms ease"
+  } else {
+    d3us_Noti_BodyMesh.style.transition = "opacity 300ms ease"
+    d3us_Noti_BodyGlow.style.transition = "opacity 300ms ease"
+  }
+  
+  isHovering = false
+});
+
+d3us_Noti_Body.addEventListener("mouseout", (event) => {
+  isHovering = true;
+})
