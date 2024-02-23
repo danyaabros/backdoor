@@ -142,7 +142,6 @@ d3us_Noti_Body.addEventListener("mousemove", (event) => {
   const localX = (event.clientX - rect.left) / rect.width
   const localY = (event.clientY - rect.top) / rect.height
   
-  console.log(localX, localY)
   d3us_Noti_BodyMesh.style.left = localX * 100 + "%"
   d3us_Noti_BodyMesh.style.top = localY * 100 + "%"
   
