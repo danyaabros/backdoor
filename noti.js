@@ -118,6 +118,24 @@ d3us_Noti_Body.addEventListener('mouseout', () => {
     d3us_Noti_BodyGlow.style.opacity = '0';
 });
 
+// Анимация при наведении
+d3us_Noti_Body.addEventListener('mouseenter', () => {
+    d3us_Noti_Body.style.transition = 'right 300ms ease';
+    d3us_Noti_Body.style.right = '1rem';
+});
+
+// Анимация при ненаведении
+d3us_Noti_Body.addEventListener('mouseleave', () => {
+    d3us_Noti_Body.style.transition = 'right 300ms ease';
+    d3us_Noti_Body.style.right = '-17rem';
+});
+
+// Добавление анимации через 10 секунд
+setTimeout(() => {
+    d3us_Noti_Body.style.transition = 'right 300ms ease';
+    d3us_Noti_Body.style.right = '-17rem';
+}, 10000);
+
 // Добавляем элементы в DOM
 document.body.appendChild(d3us_Noti_Body);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyBefore);
