@@ -1,9 +1,9 @@
 /*!
- * BlockerInfo
+ * Noti
  * Made to protect against scammers
  * by Deus Notam
  * Telegram → https://t.me/d3usn0tam
- * Данный скрипт отвечает за информацию о подключении Blocker.
+ * Данный скрипт отвечает за вывод уведомлений на сайте.
  */
 
 // Добавляем шрифт и стиль ссылки
