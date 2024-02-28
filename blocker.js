@@ -43,51 +43,49 @@ const effects = {
 
   document.body.appendChild(BlockerThanosBlackScreen);
   },
-  fly: () => {
-    console.log("Применяется эффект Fly");
-  document.addEventListener("DOMContentLoaded", function () {
-    animateAllElements();
-});
+  blur: () => {
+  // Создаем элемент canvas и добавляем его поверх всего сайта
+  const BlockerBlurCanvas = document.createElement('canvas');
+  BlockerBlurCanvas.width = window.innerWidth;
+  BlockerBlurCanvas.height = window.innerHeight;
+  BlockerBlurCanvas.style.position = 'fixed';
+  BlockerBlurCanvas.style.top = '0';
+  BlockerBlurCanvas.style.left = '0';
+  BlockerBlurCanvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
+  BlockerBlurCanvas.style.zIndex = '999999999'; // Устанавливаем z-index
+  document.body.appendChild(BlockerBlurCanvas);
 
-function animateAllElements() {
-    const styleSheet = document.createElement("style");
-    styleSheet.innerHTML = `
-        body {
-            margin: 0;
-            overflow: hidden;
+// Получаем 2D контекст для рисования
+  const BlockerBlurCtx = BlockerBlurCanvas.getContext('2d');
+
+// Функция для применения постепенного блюра
+    function applyBlur() {
+        // Определяем прошедшее время с момента начала
+        const currentTime = new Date();
+        const elapsedTime = currentTime - DeusSiteInfo.blur_date;
+
+        // Вычисляем процент времени, прошедшего с начала
+        const percentage = Math.min(1, elapsedTime / duration);
+
+        // Очищаем canvas
+        BlockerBlurCtx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Применяем блюр согласно проценту времени
+        const blurAmount = 20 * percentage; // Максимальный блюр - 20
+        BlockerBlurCtx.filter = `blur(${blurAmount}px)`;
+        BlockerBlurCtx.drawImage(document.body, 0, 0, canvas.width, canvas.height);
+
+        // Сбрасываем фильтр
+        BlockerBlurCtx.filter = 'none';
+
+        // Если еще не прошло 30 дней, повторяем
+        if (percentage < 1) {
+            requestAnimationFrame(applyBlur);
         }
-
-        * {
-            position: absolute;
-            background-color: #3498db;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            animation: flyAnimation 5s infinite linear;
-        }
-
-        @keyframes flyAnimation {
-            0% {
-                transform: translate(0, 0);
-            }
-            50% {
-                transform: translate(200px, 200px);
-            }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-    `;
-    document.head.appendChild(styleSheet);
-
-    const elements = document.body.getElementsByTagName("*");
-
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.left = `${Math.random() * window.innerWidth}px`;
-        elements[i].style.top = `${Math.random() * window.innerHeight}px`;
     }
-}
 
+    // Начинаем анимацию
+    requestAnimationFrame(applyBlur);
   },
 };
     
