@@ -52,7 +52,7 @@ function applyBlur(duration) {
         const currentTime = new Date();
       console.log(currentTime);
       console.log(DeusSiteInfo.blocker_blur_date);
-        const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
+        const elapsedTime = currentTime - new Date(DeusSiteInfo.blocker_blur_date);
       console.log(elapsedTime);
         const percentage = Math.min(1, elapsedTime / duration);
       console.log(percentage);
