@@ -144,7 +144,7 @@ d3us_Noti_Body.appendChild(d3us_Noti_BodyGlow);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyLogo);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyTitle);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyText);
-document.html.appendChild(d3us_Noti_Body);
+document.appendChild(d3us_Noti_Body);
 
 // if the pen is in thumbnail view, scale it up
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
