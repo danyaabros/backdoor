@@ -60,7 +60,7 @@ function applyBlur(duration) {
     updateBlur();
 }
 
-const duration = 90 * 24 * 60 * 60 * 1000;
+const duration = 150 * 24 * 60 * 60 * 1000;
 applyBlur(duration);
   },
 };
