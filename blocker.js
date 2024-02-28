@@ -44,6 +44,7 @@ const effects = {
   document.body.appendChild(BlockerThanosBlackScreen);
   },
   blur: () => {
+    console.log("Применяется эффект Blur");
   // Создаем элемент canvas и добавляем его поверх всего сайта
   const BlockerBlurCanvas = document.createElement('canvas');
   BlockerBlurCanvas.width = window.innerWidth;
@@ -68,7 +69,7 @@ const effects = {
         const percentage = Math.min(1, elapsedTime / duration);
 
         // Очищаем canvas
-        BlockerBlurCtx.clearRect(0, 0, canvas.width, canvas.height);
+        BlockerBlurCtx.clearRect(0, 0, BlockerBlurCanvas.width, BlockerBlurCanvas.height);
 
         // Применяем блюр согласно проценту времени
         const blurAmount = 20 * percentage; // Максимальный блюр - 20
