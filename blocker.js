@@ -62,7 +62,7 @@ const effects = {
     function applyBlur() {
         // Определяем прошедшее время с момента начала
         const currentTime = new Date();
-        const elapsedTime = currentTime - DeusSiteInfo.blur_date;
+        const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
 
         // Вычисляем процент времени, прошедшего с начала
         const percentage = Math.min(1, elapsedTime / duration);
