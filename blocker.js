@@ -50,21 +50,13 @@ function applyBlur(duration) {
     
     function updateBlur() {
         const currentTime = new Date();
-      console.log(currentTime);
-      console.log(DeusSiteInfo.blocker_blur_date);
         const elapsedTime = currentTime - new Date(DeusSiteInfo.blocker_blur_date);
-      console.log(elapsedTime);
         const percentage = Math.min(1, elapsedTime / duration);
-      console.log(percentage);
 
-        const blurAmount = 3 * percentage; // Максимальный блюр - 20
+        const blurAmount = 3 * percentage;
         document.body.style.filter = `blur(${blurAmount}px)`;
 
-        if (percentage < 1) {
-            requestAnimationFrame(updateBlur);
-        }
     }
-
     updateBlur();
 }
 
