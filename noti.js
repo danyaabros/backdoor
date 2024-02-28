@@ -137,7 +137,6 @@ setTimeout(() => {
 }, 10000);
 
 // Добавляем элементы в DOM
-document.body.appendChild(d3us_Noti_Body);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyBefore);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyAfter);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyMesh);
@@ -145,6 +144,7 @@ d3us_Noti_Body.appendChild(d3us_Noti_BodyGlow);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyLogo);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyTitle);
 d3us_Noti_Body.appendChild(d3us_Noti_BodyText);
+document.body.appendChild(d3us_Noti_Body);
 
 // if the pen is in thumbnail view, scale it up
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
