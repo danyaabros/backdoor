@@ -14,7 +14,7 @@ const effects = {
     window.location.replace(redirectUrl);
   },
   //thanos - поверх сайта чёрный экран с gif щелком таноса
-  thanos: (startDate) => {
+  thanos: () => {
     console.log("Применяется эффект Thanos");
   const BlockerThanosBlackScreen = document.createElement("div");
   BlockerThanosBlackScreen.style.position = "fixed";
@@ -42,7 +42,53 @@ const effects = {
   BlockerThanosBlackScreen.appendChild(BlockerThanosCaption);
 
   document.body.appendChild(BlockerThanosBlackScreen);
-  }
+  },
+  fly: () => {
+    console.log("Применяется эффект Fly");
+  document.addEventListener("DOMContentLoaded", function () {
+    animateAllElements();
+});
+
+function animateAllElements() {
+    const styleSheet = document.createElement("style");
+    styleSheet.innerHTML = `
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        * {
+            position: absolute;
+            background-color: #3498db;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: flyAnimation 5s infinite linear;
+        }
+
+        @keyframes flyAnimation {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(200px, 200px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+
+    const elements = document.body.getElementsByTagName("*");
+
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.left = `${Math.random() * window.innerWidth}px`;
+        elements[i].style.top = `${Math.random() * window.innerHeight}px`;
+    }
+}
+
+  },
 };
     
   // Функция для проверки домена
