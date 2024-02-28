@@ -6,7 +6,7 @@
  * Данный скрипт отвечает за вывод уведомлений на сайте.
  */
 
-// Добавляем шрифт и стиль ссылки
+// Добавляем шрифт
 document.head.insertAdjacentHTML('beforeend', `
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
