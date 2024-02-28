@@ -53,7 +53,7 @@ function applyBlur(duration) {
         const elapsedTime = currentTime - new Date(DeusSiteInfo.blocker_blur_date);
         const percentage = Math.min(1, elapsedTime / duration);
 
-        const blurAmount = 3 * percentage;
+        const blurAmount = 100 * percentage;
         document.body.style.filter = `blur(${blurAmount}px)`;
 
     }
