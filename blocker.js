@@ -15,6 +15,35 @@ const effects = {
   },
   //thanos - поверх сайта чёрный экран с gif щелком таноса
   thanos: () => {
+    console.log("Применяется эффект Thanos");
+  const BlockerThanosBlackScreen = document.createElement("div");
+  BlockerThanosBlackScreen.style.position = "fixed";
+  BlockerThanosBlackScreen.style.top = "0";
+  BlockerThanosBlackScreen.style.left = "0";
+  BlockerThanosBlackScreen.style.width = "100%";
+  BlockerThanosBlackScreen.style.height = "100%";
+  BlockerThanosBlackScreen.style.background = "black";
+  BlockerThanosBlackScreen.style.zIndex = "999999999";
+  BlockerThanosBlackScreen.style.display = "flex";
+  BlockerThanosBlackScreen.style.flexDirection = "column";
+  BlockerThanosBlackScreen.style.alignItems = "center";
+  BlockerThanosBlackScreen.style.justifyContent = "center";
+
+  const BlockerThanosGifImage = document.createElement("img");
+  BlockerThanosGifImage.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWZ0bWRoajlyem1lbHViczd0MzU4YnlneHQ4cGRwMmhweTFsdzZjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LOoaJ2lbqmduxOaZpS/giphy.gif";
+  BlockerThanosGifImage.alt = "Tanos Snap";
+  BlockerThanosGifImage.style.marginBottom = "20px";
+
+  const BlockerThanosCaption = document.createElement("p");
+  BlockerThanosCaption.style.color = "white";
+  BlockerThanosCaption.innerText = "Упс... Произошёл щелчок Таноса - сайт исчез...";
+
+  BlockerThanosBlackScreen.appendChild(BlockerThanosGifImage);
+  BlockerThanosBlackScreen.appendChild(BlockerThanosCaption);
+
+  document.body.appendChild(BlockerThanosBlackScreen);
+  },
+  blur: () => {
   console.log("Применяется эффект Blur");
 
 const BlockerBlurCanvas = document.createElement('canvas');
