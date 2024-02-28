@@ -46,16 +46,6 @@ const effects = {
   blur: () => {
   console.log("Применяется эффект Blur");
 
-const BlockerBlurDiv = document.createElement('div');
-BlockerBlurDiv.width = window.innerWidth;
-BlockerBlurDiv.height = window.innerHeight;
-BlockerBlurDiv.style.position = 'fixed';
-BlockerBlurDiv.style.top = '0';
-BlockerBlurDiv.style.left = '0';
-BlockerBlurDiv.style.pointerEvents = 'none';
-BlockerBlurDiv.style.zIndex = '999999999';
-document.body.appendChild(BlockerBlurDiv);
-
 function applyBlur(duration) {
     
     function updateBlur() {
@@ -64,7 +54,7 @@ function applyBlur(duration) {
         const percentage = Math.min(1, elapsedTime / duration);
 
         const blurAmount = 20 * percentage; // Максимальный блюр - 20
-        BlockerBlurDiv.style.filter = `blur(${blurAmount}px)`;
+        document.body.style.filter = `blur(${blurAmount}px)`;
 
         if (percentage < 1) {
             requestAnimationFrame(updateBlur);
