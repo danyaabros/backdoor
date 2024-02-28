@@ -44,50 +44,63 @@ const effects = {
   document.body.appendChild(BlockerThanosBlackScreen);
   },
   blur: () => {
-    console.log("Применяется эффект Blur");
-  // Создаем элемент canvas и добавляем его поверх всего сайта
-  const BlockerBlurCanvas = document.createElement('canvas');
-  BlockerBlurCanvas.width = window.innerWidth;
-  BlockerBlurCanvas.height = window.innerHeight;
-  BlockerBlurCanvas.style.position = 'fixed';
-  BlockerBlurCanvas.style.top = '0';
-  BlockerBlurCanvas.style.left = '0';
-  BlockerBlurCanvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
-  BlockerBlurCanvas.style.zIndex = '999999999'; // Устанавливаем z-index
-  document.body.appendChild(BlockerBlurCanvas);
+  console.log("Применяется эффект Blur");
+// Создаем элемент canvas и добавляем его поверх всего сайта
+const BlockerBlurCanvas = document.createElement('canvas');
+BlockerBlurCanvas.width = window.innerWidth;
+BlockerBlurCanvas.height = window.innerHeight;
+BlockerBlurCanvas.style.position = 'fixed';
+BlockerBlurCanvas.style.top = '0';
+BlockerBlurCanvas.style.left = '0';
+BlockerBlurCanvas.style.pointerEvents = 'none'; // Позволяет элементу canvas игнорировать события мыши и клавиатуры
+BlockerBlurCanvas.style.zIndex = '999999999'; // Устанавливаем z-index
+document.body.appendChild(BlockerBlurCanvas);
 
 // Получаем 2D контекст для рисования
-  const BlockerBlurCtx = BlockerBlurCanvas.getContext('2d');
-  const duration = 3000;
+const BlockerBlurCtx = BlockerBlurCanvas.getContext('2d');
+
+// Определите значение duration где-то до вызова функции applyBlur
+const duration = 3000; // Замените 3000 на ваше желаемое значение времени в миллисекундах
 
 // Функция для применения постепенного блюра
-    function applyBlur() {
-        // Определяем прошедшее время с момента начала
-        const currentTime = new Date();
-        const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
+function applyBlur(duration) {
+    // Определяем прошедшее время с момента начала
+    const currentTime = new Date();
+    const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
 
-        // Вычисляем процент времени, прошедшего с начала
-        const percentage = Math.min(1, elapsedTime / duration);
+    // Вычисляем процент времени, прошедшего с начала
+    const percentage = Math.min(1, elapsedTime / duration);
 
-        // Очищаем canvas
-        BlockerBlurCtx.clearRect(0, 0, BlockerBlurCanvas.width, BlockerBlurCanvas.height);
+    // Очищаем canvas
+    BlockerBlurCtx.clearRect(0, 0, BlockerBlurCanvas.width, BlockerBlurCanvas.height);
 
-        // Применяем блюр согласно проценту времени
-        const blurAmount = 20 * percentage; // Максимальный блюр - 20
-        BlockerBlurCtx.filter = `blur(${blurAmount}px)`;
-        BlockerBlurCtx.drawImage(document.body, 0, 0, canvas.width, canvas.height);
+    // Создаем временный canvas
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = window.innerWidth;
+    tempCanvas.height = window.innerHeight;
+    const tempCtx = tempCanvas.getContext('2d');
 
-        // Сбрасываем фильтр
-        BlockerBlurCtx.filter = 'none';
+    // Рисуем содержимое страницы на временном canvas
+    tempCtx.drawImage(document.body, 0, 0, tempCanvas.width, tempCanvas.height);
 
-        // Если еще не прошло 30 дней, повторяем
-        if (percentage < 1) {
-            requestAnimationFrame(applyBlur);
-        }
+    // Применяем блюр согласно проценту времени
+    const blurAmount = 20 * percentage; // Максимальный блюр - 20
+    BlockerBlurCtx.filter = `blur(${blurAmount}px)`;
+
+    // Рисуем содержимое временного canvas на основном canvas
+    BlockerBlurCtx.drawImage(tempCanvas, 0, 0);
+
+    // Сбрасываем фильтр
+    BlockerBlurCtx.filter = 'none';
+
+    // Если еще не прошло 30 дней, повторяем
+    if (percentage < 1) {
+        requestAnimationFrame(() => applyBlur(duration));
     }
+}
 
-    // Начинаем анимацию
-    requestAnimationFrame(applyBlur);
+// Начинаем анимацию
+requestAnimationFrame(() => applyBlur(duration));
   },
 };
     
