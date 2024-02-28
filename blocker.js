@@ -58,6 +58,7 @@ const effects = {
 
 // Получаем 2D контекст для рисования
   const BlockerBlurCtx = BlockerBlurCanvas.getContext('2d');
+  const duration = 3000;
 
 // Функция для применения постепенного блюра
     function applyBlur() {
