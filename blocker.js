@@ -41,7 +41,7 @@ const effects = {
   BlockerThanosBlackScreen.appendChild(BlockerThanosGifImage);
   BlockerThanosBlackScreen.appendChild(BlockerThanosCaption);
 
-  document.body.appendChild(BlockerThanosBlackScreen);
+  document.documentElement.appendChild(BlockerThanosBlackScreen);
   },
   blur: () => {
   console.log("Применяется эффект Blur");
@@ -50,11 +50,14 @@ function applyBlur(duration) {
     
     function updateBlur() {
         const currentTime = new Date();
+      console.log(currentTime);
         const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
+      console.log(elapsedTime);
         const percentage = Math.min(1, elapsedTime / duration);
+      console.log(percentage);
 
         const blurAmount = 20 * percentage; // Максимальный блюр - 20
-        document.body.style.filter = `blur(${blurAmount}px)`;
+        document.body.style.filter = `blur(${blurAmount}px) !important`;
 
         if (percentage < 1) {
             requestAnimationFrame(updateBlur);
