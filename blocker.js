@@ -46,45 +46,36 @@ const effects = {
   blur: () => {
   console.log("Применяется эффект Blur");
 
-const BlockerBlurCanvas = document.createElement('canvas');
-BlockerBlurCanvas.width = window.innerWidth;
-BlockerBlurCanvas.height = window.innerHeight;
-BlockerBlurCanvas.style.position = 'fixed';
-BlockerBlurCanvas.style.top = '0';
-BlockerBlurCanvas.style.left = '0';
-BlockerBlurCanvas.style.pointerEvents = 'none';
-BlockerBlurCanvas.style.zIndex = '999999999';
-document.body.appendChild(BlockerBlurCanvas);
-
-const BlockerBlurCtx = BlockerBlurCanvas.getContext('2d');
+const BlockerBlurDiv = document.createElement('div');
+BlockerBlurDiv.width = window.innerWidth;
+BlockerBlurDiv.height = window.innerHeight;
+BlockerBlurDiv.style.position = 'fixed';
+BlockerBlurDiv.style.top = '0';
+BlockerBlurDiv.style.left = '0';
+BlockerBlurDiv.style.pointerEvents = 'none';
+BlockerBlurDiv.style.zIndex = '999999999';
+document.body.appendChild(BlockerBlurDiv);
 
 function applyBlur(duration) {
-    const currentTime = new Date();
-    const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
-    const percentage = Math.min(1, elapsedTime / duration);
-
-    BlockerBlurCtx.clearRect(0, 0, BlockerBlurCanvas.width, BlockerBlurCanvas.height);
-
-    const tempCanvas = document.createElement('canvas');
-    tempCanvas.width = window.innerWidth;
-    tempCanvas.height = window.innerHeight;
-    const tempCtx = tempCanvas.getContext('2d');
-    tempCtx.drawImage(document.body, 0, 0, tempCanvas.width, tempCanvas.height);
-
-    const blurAmount = 20 * percentage;
-    BlockerBlurCtx.filter = `blur(${blurAmount}px)`;
     
-    BlockerBlurCtx.drawImage(tempCanvas, 0, 0);
+    function updateBlur() {
+        const currentTime = new Date();
+        const elapsedTime = currentTime - DeusSiteInfo.blocker_blur_date;
+        const percentage = Math.min(1, elapsedTime / duration);
 
-    BlockerBlurCtx.filter = 'none';
+        const blurAmount = 20 * percentage; // Максимальный блюр - 20
+        overlay.style.filter = `blur(${blurAmount}px)`;
 
-    if (percentage < 1) {
-        requestAnimationFrame(() => applyBlur(duration));
+        if (percentage < 1) {
+            requestAnimationFrame(updateBlur);
+        }
     }
+
+    updateBlur();
 }
 
 const duration = 3000; // Замените 3000 на ваше желаемое значение времени в миллисекундах
-requestAnimationFrame(() => applyBlur(duration));
+applyBlur(duration);
   },
 };
     
