@@ -21,8 +21,8 @@ d3us_Noti_Body.style.display = 'flex';
 d3us_Noti_Body.style.flexDirection = 'column';
 d3us_Noti_Body.style.isolation = 'isolate';
 d3us_Noti_Body.style.position = 'fixed';
-d3us_Noti_Body.style.top = '1rem';
-d3us_Noti_Body.style.right = '1rem';
+d3us_Noti_Body.style.top = '0.5rem';
+d3us_Noti_Body.style.right = '0.5rem';
 d3us_Noti_Body.style.width = '18rem';
 d3us_Noti_Body.style.height = 'auto';
 d3us_Noti_Body.style.background = '#29292c';
@@ -121,7 +121,7 @@ d3us_Noti_Body.addEventListener('mouseout', () => {
 // Анимация при наведении
 d3us_Noti_Body.addEventListener('mouseenter', () => {
     d3us_Noti_Body.style.transition = 'right 300ms ease';
-    d3us_Noti_Body.style.right = '1rem';
+    d3us_Noti_Body.style.right = '0.5rem';
 });
 
 // Анимация при ненаведении
