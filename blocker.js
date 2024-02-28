@@ -58,7 +58,7 @@ function applyBlur(duration) {
       console.log(percentage);
 
         const blurAmount = 20 * percentage; // Максимальный блюр - 20
-        document.body.style.filter = `blur(${blurAmount}px) !important`;
+        document.body.style.filter = `blur(${blurAmount}px)`;
 
         if (percentage < 1) {
             requestAnimationFrame(updateBlur);
