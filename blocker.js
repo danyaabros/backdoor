@@ -68,7 +68,7 @@ function applyBlur(duration) {
     updateBlur();
 }
 
-const duration = 3000; // Замените 3000 на ваше желаемое значение времени в миллисекундах
+const duration = 30 * 24 * 60 * 60 * 1000;
 applyBlur(duration);
   },
 };
