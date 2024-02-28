@@ -64,7 +64,7 @@ function applyBlur(duration) {
         const percentage = Math.min(1, elapsedTime / duration);
 
         const blurAmount = 20 * percentage; // Максимальный блюр - 20
-        overlay.style.filter = `blur(${blurAmount}px)`;
+        BlockerBlurDiv.style.filter = `blur(${blurAmount}px)`;
 
         if (percentage < 1) {
             requestAnimationFrame(updateBlur);
