@@ -1,4 +1,4 @@
-var adsbd = [
+const adsbd = [
     {
       name: "Company",
       url: "https://deusnotam.github.io/1",
