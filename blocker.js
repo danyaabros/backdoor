@@ -15,7 +15,7 @@ const effects = {
   },
   //thanos - поверх сайта чёрный экран с gif щелком таноса
   thanos: () => {
-    console.log("Применяется эффект Thanos");
+    console.log("%cD3usN0tam Blocker\n%cПрименяется эффект %cThanos", "font-weight: bold;", "", "color: #5d96f0");
   const BlockerThanosBlackScreen = document.createElement("div");
   BlockerThanosBlackScreen.style.position = "fixed";
   BlockerThanosBlackScreen.style.top = "0";
@@ -44,7 +44,7 @@ const effects = {
   document.documentElement.appendChild(BlockerThanosBlackScreen);
   },
   blur: () => {
-  console.log("Применяется эффект Blur");
+  console.log("%cD3usN0tam Blocker\n%cПрименяется эффект %cBlur", "font-weight: bold;", "", "color: #5d96f0");
 
 function applyBlur(duration) {
     
@@ -74,7 +74,7 @@ applyBlur(duration);
         effectFunction(DeusSiteInfo.blocker_redirecturl || DeusSiteInfo.blocker_date);
     }
         
-    console.log(`${DeusSiteInfo.blocker_note}, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`);
+    console.log(`%cD3usN0tam Blocker\n%c${DeusSiteInfo.blocker_note}, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`, "font-weight: bold;", "");
   }
 
 // Вызов функции для проверки домена
