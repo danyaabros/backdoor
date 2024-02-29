@@ -40,8 +40,7 @@ const adsbd = [
 function getRandomAd() {
     // Получаем случайный индекс
     var randomIndex = Math.floor(Math.random() * adsbd.length);
-    // Возвращаем случайный элемент из массива
-    return adsbd[randomIndex];
+    return adsbd.splice(randomIndex, 1)[0];
 }
 
 function insertAd() {
@@ -49,6 +48,7 @@ function insertAd() {
     var randomAd1 = getRandomAd();
     var randomAd2 = getRandomAd();
     var randomAd3 = getRandomAd();
+
 document.head.insertAdjacentHTML('beforeend', `
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
