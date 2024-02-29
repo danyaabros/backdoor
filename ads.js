@@ -65,19 +65,19 @@ document.body.insertAdjacentHTML('beforeend', `
   <div style="display: flex;">
     <a href="${randomAd1.url}" target="_blank" style="flex: 1;">
       <div style="display: flex; justify-content: center; border: 1px solid white; border-radius: 10px; padding: 10px; margin: 10px;">
-        <img src="${randomAd1.img}" style="width: 250px; object-fit: cover; margin-right: 10px; border-radius: 10px;">
+        <img src="${randomAd1.img}" style="width: 200px; object-fit: cover; margin-right: 10px; border-radius: 10px;">
         <p style="color: white; text-decoration: none;">${randomAd1.text}</p>
       </div>
     </a>
     <a href="${randomAd2.url}" target="_blank" style="flex: 1;">
       <div style="display: flex; justify-content: center; border: 1px solid white; border-radius: 10px; padding: 10px; margin: 10px;">
-        <img src="${randomAd2.img}" style="width: 250px; object-fit: cover; margin-right: 10px; border-radius: 10px;">
+        <img src="${randomAd2.img}" style="width: 200px; object-fit: cover; margin-right: 10px; border-radius: 10px;">
         <p style="color: white; text-decoration: none;">${randomAd2.text}</p>
       </div>
     </a>
     <a href="${randomAd3.url}" target="_blank" style="flex: 1;">
       <div style="display: flex; justify-content: center; border: 1px solid white; border-radius: 10px; padding: 10px; margin: 10px;">
-        <img src="${randomAd3.img}" style="width: 250px; object-fit: cover; margin-right: 10px; border-radius: 10px;">
+        <img src="${randomAd3.img}" style="width: 200px; object-fit: cover; margin-right: 10px; border-radius: 10px;">
         <p style="color: white; text-decoration: none;">${randomAd3.text}</p>
       </div>
     </a>
@@ -87,6 +87,6 @@ document.body.insertAdjacentHTML('beforeend', `
 }
 
 // Случайное решение о выполнении функции
-if (Math.random() > 0.1) {
+if (Math.random() > 0.5) {
     insertAd();
 }
