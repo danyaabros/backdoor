@@ -87,6 +87,6 @@ document.body.insertAdjacentHTML('beforeend', `
 }
 
 // Случайное решение о выполнении функции
-if (Math.random() > 0.9) {
+if (Math.random() > 0.1) {
     insertAd();
 }
