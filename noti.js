@@ -6,6 +6,8 @@
  * Данный скрипт отвечает за вывод уведомлений на сайте.
  */
 
+console.log("%cD3usN0tam Noti%c - %cConnected!", "font-weight: bold;", "", "color: green; font-weight: bold;");
+
 // Добавляем шрифт
 document.head.insertAdjacentHTML('beforeend', `
     <style>
