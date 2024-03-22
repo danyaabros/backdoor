@@ -60,7 +60,7 @@ document.body.insertAdjacentHTML('beforeend', `
   <a href="https://deusnotam.github.io" target="_blank">
     <img src="https://deusnotam.github.io/site/img/logo.jpeg" style="width: 60px;">
   </a>
-  <p style="text-align: center;">D3usN0tam System - модификация упрощающая жизнь!<br>Модификация совершенно бесплатна и средства на разработку идут от рекламы, поэтому...</p>
+  <p style="text-align: center;">D3US System - модификация упрощающая жизнь!<br>Модификация совершенно бесплатна и средства на разработку идут от рекламы, поэтому...</p>
   <p>Реклама</p>
   <div style="display: flex;">
     <a href="${randomAd1.url}" target="_blank" style="flex: 1;">
