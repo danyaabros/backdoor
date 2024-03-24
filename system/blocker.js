@@ -1,8 +1,7 @@
 /*!
  * Blocker.js
- * Made to protect against scammers
- * by Deus Notam
- * Telegram → https://t.me/d3usn0tam
+ * Made by Daniel Abros
+ * Telegram → https://t.me/abrosxd
  * Данный скрипт отвечает за наказание.
  */
 
@@ -74,7 +73,7 @@ applyBlur(duration);
         effectFunction(DeusSiteInfo.blocker_redirecturl || DeusSiteInfo.blocker_date);
     }
         
-    console.log(`%cD3US Blocker\n%c${DeusSiteInfo.blocker_note}, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nTelegram Group → https://t.me/d3usn0tam`, "font-weight: bold;", "");
+    console.log(`%cD3US Blocker\n%c${DeusSiteInfo.blocker_note}, поэтому будь осторожен и не удаляй этот код. По всем вопросам пиши сюда \nMy Telegram → https://t.me/abrosxd`, "font-weight: bold;", "");
   }
 
 // Вызов функции для проверки домена
