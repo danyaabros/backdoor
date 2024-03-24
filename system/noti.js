@@ -1,8 +1,7 @@
 /*!
  * Noti
- * Made to protect against scammers
- * by Deus Notam
- * Telegram → https://t.me/d3usn0tam
+ * Made by Daniel Abros
+ * Telegram → https://t.me/abrosxd
  * Данный скрипт отвечает за вывод уведомлений на сайте.
  */
 
