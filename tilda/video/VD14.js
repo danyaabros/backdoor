@@ -52,8 +52,8 @@
     const subheadingTitle = document.querySelector('.t937__subheading-title');
     let playlistItemCount = 0;
 
-    for (const key in playlist) {
-        if (playlist.hasOwnProperty(key)) {
+    for (const key in VD14playlist) {
+        if (VD14playlist.hasOwnProperty(key)) {
             playlistItemCount++; // Увеличиваем счетчик элементов плейлиста
             const listItem = document.createElement('div');
             listItem.classList.add('t937__playlist-item');
