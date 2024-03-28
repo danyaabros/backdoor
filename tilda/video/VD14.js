@@ -88,7 +88,7 @@ for (const key in VD14playlist) {
 }
 
 // Отображение количества элементов плейлиста в заголовке
-subheadingTitle.textContent = `(${playlistItemCount}) видео`;
+subheadingTitle.textContent = `${playlistItemCount} видео`;
 
 // Отображение первого видео из плейлиста по умолчанию
 displayVideo(1);
