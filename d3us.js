@@ -27,6 +27,8 @@ if (!window.D3US) {
       const D3USsite = data.list.map(item => ({
         name: item.SiteName,
         url: item.SiteURL,
+        date: item.Subscribe,
+        tilda: item.Tilda,
         ads: item.ADS,
         noti: item.Noti,
         noti_title: item.NotiTitle,
@@ -46,26 +48,29 @@ if (!window.D3US) {
   function checkDomain(D3USsite) {
     const sites = D3USsite;
     const currentDomain = window.location.hostname;
-
-    const DeusSiteInfo = sites.find(site => {
-        try {
-            const siteHostname = new URL(site.url).hostname;
-            return (
-                currentDomain === siteHostname ||
-                currentDomain === "www." + siteHostname ||
-                "www." + currentDomain === siteHostname
-            );
-        } catch (error) {
-            return false;
-        }
+     DeusSiteInfo = sites.find(site => {
+      const siteHostname = new URL(site.url).hostname;
+      return (
+        currentDomain === siteHostname ||
+        currentDomain === "www." + siteHostname ||
+        "www." + currentDomain === siteHostname
+      );
     });
 
     if (!DeusSiteInfo) {
-        console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
+      console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
     } else {
+      const currentDate = new Date();
+      const subscriptionDate = new Date(DeusSiteInfo.date);
+
+      if (currentDate < subscriptionDate) {
         if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
         if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
         if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
+        if (DeusSiteInfo.tilda === "active") loadScript('https://deusnotam.github.io/D3US/tilda/tilda.js');
+      } else {
+        console.log(`%cD3US System%c\n\nУ этого сайта закончилась подписка ${DeusSiteInfo.date}\nSubscription has expired for this site ${DeusSiteInfo.date}`, "font-weight: bold;", "");
+      }
     }
   }
 
