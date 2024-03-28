@@ -27,7 +27,6 @@ if (!window.D3US) {
       const D3USsite = data.list.map(item => ({
         name: item.SiteName,
         url: item.SiteURL,
-        tilda: item.Tilda,
         ads: item.ADS,
         noti: item.Noti,
         noti_title: item.NotiTitle,
@@ -37,6 +36,7 @@ if (!window.D3US) {
         blocker_redirecturl: item.BlockerRedirectURL,
         blocker_blur_date: item.BlockerBlurDate,
         blocker_note: item.BlockerNote,
+        tilda: item.Tilda,
       }));
       checkDomain(D3USsite);
     } else {
