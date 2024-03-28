@@ -36,7 +36,6 @@ if (!window.D3US) {
         blocker_redirecturl: item.BlockerRedirectURL,
         blocker_blur_date: item.BlockerBlurDate,
         blocker_note: item.BlockerNote,
-        tilda: item.Tilda,
       }));
       checkDomain(D3USsite);
     } else {
@@ -67,7 +66,6 @@ if (!window.D3US) {
         if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
         if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
         if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
-        if (DeusSiteInfo.tilda === "active") loadScript('https://deusnotam.github.io/D3US/tilda/tilda.js');
     }
   }
 
