@@ -1,3 +1,11 @@
+/*!
+ * VD14.js
+ * (c) 2024-2024
+ * Made by Daniel Abros
+ * Telegram → https://t.me/abrosxd
+ * Видео из Google Drive
+ */
+
 // Определяем переменную для хранения ссылки на текущий iframe
 let currentIframe = null;
 
