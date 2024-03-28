@@ -1,3 +1,10 @@
+/*!
+ * Tilda.js
+ * (c) 2024-2024
+ * Made by Daniel Abros
+ * Telegram → https://t.me/abrosxd
+ */
+
 function loadScriptTilda(src) {
     const script = document.createElement('script');
     script.src = src;
