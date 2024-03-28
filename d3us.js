@@ -46,21 +46,27 @@ if (!window.D3US) {
   function checkDomain(D3USsite) {
     const sites = D3USsite;
     const currentDomain = window.location.hostname;
-     DeusSiteInfo = sites.find(site => {
-      const siteHostname = new URL(site.url).hostname;
-      return (
-        currentDomain === siteHostname ||
-        currentDomain === "www." + siteHostname ||
-        "www." + currentDomain === siteHostname
-      );
+
+    const DeusSiteInfo = sites.find(site => {
+        try {
+            const siteHostname = new URL(site.url).hostname;
+            return (
+                currentDomain === siteHostname ||
+                currentDomain === "www." + siteHostname ||
+                "www." + currentDomain === siteHostname
+            );
+        } catch (error) {
+            console.error("Invalid URL:", site.url);
+            return false;
+        }
     });
 
     if (!DeusSiteInfo) {
-      console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
+        console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
     } else {
-      if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
-      if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
-      if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
+        if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
+        if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
+        if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
     }
   }
 
