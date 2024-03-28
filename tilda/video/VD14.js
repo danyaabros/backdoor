@@ -68,11 +68,11 @@
 
             const playlistTitle = document.createElement('div');
             playlistTitle.classList.add('t937__playlist-title');
-            playlistTitle.textContent = playlist[key].title;
+            playlistTitle.textContent = VD14playlist[key].title;
 
             const playlistTime = document.createElement('div');
             playlistTime.classList.add('t937__playlist-time');
-            playlistTime.textContent = playlist[key].time;
+            playlistTime.textContent = VD14playlist[key].time;
 
             playlistLink.appendChild(playlistNumber);
             playlistLink.appendChild(playlistTitle);
