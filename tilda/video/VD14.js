@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+
     // Определяем переменную для хранения ссылки на текущий iframe
     let currentIframe = null;
 
@@ -91,4 +91,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Отображение первого видео из плейлиста по умолчанию
     displayVideo(1);
-});
