@@ -6,7 +6,6 @@
         const videoData = VD14playlist[videoId];
         const videoPlayerContainer = document.querySelector('.t937__video');
         const descriptionColumn = document.querySelector('.t937__col_description');
-        const subheadingTitle = document.querySelector('.t937__subheading-title');
 
         // Удаление элемента с классом t937__system-message из контейнера t937__video
         const systemMessage = videoPlayerContainer.querySelector('.t937__system-message');
@@ -46,16 +45,16 @@
 
         // Удаление класса t937__col_hidden у элемента t937__col_description
         descriptionColumn.classList.remove('t937__col_hidden');
-
-        // Обновление количества элементов в блоке с классом t937__subheading-title
-        const playlistItemCount = Object.keys(playlist).length;
-        subheadingTitle.textContent = `Всего элементов: ${playlistItemCount}`;
     }
 
     // Создание элементов плейлиста
     const playlistContainer = document.querySelector('.t937__playlist');
-    for (const key in VD14playlist) {
-        if (VD14playlist.hasOwnProperty(key)) {
+    const subheadingTitle = document.querySelector('.t937__subheading-title');
+    let playlistItemCount = 0;
+
+    for (const key in playlist) {
+        if (playlist.hasOwnProperty(key)) {
+            playlistItemCount++; // Увеличиваем счетчик элементов плейлиста
             const listItem = document.createElement('div');
             listItem.classList.add('t937__playlist-item');
             listItem.dataset.videoId = key;
@@ -69,11 +68,11 @@
 
             const playlistTitle = document.createElement('div');
             playlistTitle.classList.add('t937__playlist-title');
-            playlistTitle.textContent = VD14playlist[key].title;
+            playlistTitle.textContent = playlist[key].title;
 
             const playlistTime = document.createElement('div');
             playlistTime.classList.add('t937__playlist-time');
-            playlistTime.textContent = VD14playlist[key].time;
+            playlistTime.textContent = playlist[key].time;
 
             playlistLink.appendChild(playlistNumber);
             playlistLink.appendChild(playlistTitle);
@@ -88,6 +87,9 @@
             playlistContainer.appendChild(listItem);
         }
     }
+
+    // Отображение количества элементов плейлиста в заголовке
+    subheadingTitle.textContent = `Видео (${playlistItemCount})`;
 
     // Отображение первого видео из плейлиста по умолчанию
     displayVideo(1);
