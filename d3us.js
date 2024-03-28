@@ -56,7 +56,6 @@ if (!window.D3US) {
                 "www." + currentDomain === siteHostname
             );
         } catch (error) {
-            console.error("Invalid URL:", site.url);
             return false;
         }
     });
