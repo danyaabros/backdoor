@@ -27,6 +27,7 @@ if (!window.D3US) {
       const D3USsite = data.list.map(item => ({
         name: item.SiteName,
         url: item.SiteURL,
+        tilda: item.Tilda,
         ads: item.ADS,
         noti: item.Noti,
         noti_title: item.NotiTitle,
@@ -66,6 +67,7 @@ if (!window.D3US) {
         if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
         if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
         if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
+        if (DeusSiteInfo.tilda === "active") loadScript('https://deusnotam.github.io/D3US/tilda/tilda.js');
     }
   }
 
