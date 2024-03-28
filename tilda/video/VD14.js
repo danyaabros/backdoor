@@ -89,7 +89,7 @@
     }
 
     // Отображение количества элементов плейлиста в заголовке
-    subheadingTitle.textContent = `Видео (${playlistItemCount})`;
+    subheadingTitle.textContent = `(${playlistItemCount}) видео`;
 
     // Отображение первого видео из плейлиста по умолчанию
     displayVideo(1);
