@@ -17,7 +17,7 @@ for (const key in D3UStilda) {
             loadScriptTilda('https://deusnotam.github.io/D3US/tilda/video/VD14.js');
         }
         if (key === 'RoadMap' && D3UStilda[key] === 'active') {
-            loadScriptTilda('https://deusnotam.github.io/D3US/tilda/form/FB15.js');
+            loadScriptTilda('https://deusnotam.github.io/D3US/tilda/mods/RoadMap.js');
         }
     }
 }
