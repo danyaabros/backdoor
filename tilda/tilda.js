@@ -3,6 +3,12 @@
  * (c) 2024-2024
  * Made by Daniel Abros
  * Telegram → https://t.me/abrosxd
+
+ * const D3UStilda = {
+ * RoadMap: "active", Эффект активности блоков
+ * VD14: "active", Видео из Google Drive
+ * };
+ 
  */
 
 function loadScriptTilda(src) {
