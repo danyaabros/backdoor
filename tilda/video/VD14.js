@@ -1,9 +1,19 @@
 /*!
+
  * VD14.js
  * (c) 2024-2024
  * Made by Daniel Abros
  * Telegram → https://t.me/abrosxd
  * Видео из Google Drive
+ * const VD14playlist = {
+ * 1: { нумерация видео
+ * title: "Название",
+ * time: "Время",
+ * note: "Заметка",
+ * url: "https://drive.google.com/file/d/(ID видео)"
+ * },
+ * };
+ 
  */
 
 // Определяем переменную для хранения ссылки на текущий iframe
