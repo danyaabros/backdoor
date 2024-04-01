@@ -4,6 +4,7 @@
  * Made by Daniel Abros
  * Telegram → https://t.me/abrosxd
  * Эффект плавной смены активности элементов
+ 
  * const RoadMap = {
  * zeroBlock: 'Тут ID ZeroBlock',
  * activeOpacity: 1, прозрачность авктивного пункта
