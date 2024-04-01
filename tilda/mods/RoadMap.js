@@ -1,3 +1,17 @@
+/*!
+ * VD14.js
+ * (c) 2024-2024
+ * Made by Daniel Abros
+ * Telegram → https://t.me/abrosxd
+ * Эффект плавной смены активности элементов
+ * const RoadMap = {
+ * zeroBlock: 'Тут ID ZeroBlock',
+ * activeOpacity: 1, прозрачность авктивного пункта
+ * deactiveOpacity: 0.4, прозрачность неавктивного пункта
+ * sizeWindow: 800, размеры окна активности
+
+ */
+
 function isInViewport(elem) {
     const rect = elem.getBoundingClientRect();
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
