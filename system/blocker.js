@@ -1,7 +1,5 @@
 /*!
  * Blocker.js
- * Made by Daniel Abros
- * Telegram → https://t.me/abrosxd
  * Данный скрипт отвечает за наказание.
  */
 
