@@ -4,8 +4,6 @@
  */
 
 if (!window.D3US) {
-  console.log("%cD3US System%c - %cConnected!%c\n\nProject Site → https://deusnotam.github.io", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
-
   const activatorScript = document.createElement('script');
   activatorScript.src = 'https://deusnotam.github.io/D3US/system/activator.js';
   document.head.appendChild(activatorScript);
@@ -56,8 +54,9 @@ if (!window.D3US) {
     });
 
     if (!DeusSiteInfo) {
-      console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
+      // console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
     } else {
+      console.log("%cD3US System%c - %cConnected!%c\n\nProject Site → https://deusnotam.github.io", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
       if (DeusSiteInfo.blocker === "active") loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
       if (DeusSiteInfo.noti === "active") loadScript('https://deusnotam.github.io/D3US/system/noti.js');
       if (DeusSiteInfo.ads === "active") loadScript('https://deusnotam.github.io/D3US/system/ads.js');
