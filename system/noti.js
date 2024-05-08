@@ -4,7 +4,7 @@
  */
 
 const notis = new abrosnoti(document.querySelector(".abrosnoti"))
-const message = [DeusSiteInfo.noti_array];
+const message = DeusSiteInfo.noti_array;
 let number = 1;
 setInterval(()=>{
   if (number == message.length) {
