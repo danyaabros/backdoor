@@ -13,5 +13,5 @@ setInterval(()=>{
   } else if (i < array.length) {
     array[i]()
   }
-  numnoti++
+  i++
 }, 4000)
