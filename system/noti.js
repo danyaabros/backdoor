@@ -10,7 +10,7 @@ let i = array.length;
 setInterval(() => {
   if (i < array.length) {
     array[i]();
-    i++; // Увеличиваем i только после вызова функции из массива
+    i++;
   } else {
     notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает", 0, true, () => { i = 0; });
   }
