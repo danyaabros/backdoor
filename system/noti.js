@@ -6,7 +6,7 @@
 const notis = new abrosnoti(document.querySelector(".abrosnoti"));
 const message = DeusSiteInfo.noti_array;
 const functionArray = eval(`[${message}]`);
-let i = 1;
+let i = 0;
 functionArray[0];
 setInterval(() => {
   if (i === functionArray.length) {
