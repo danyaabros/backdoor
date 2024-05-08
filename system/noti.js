@@ -12,6 +12,6 @@ setInterval(() => {
     array[index]();
     index++;
   } else {
-    notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает", 0, true, () => { i = 0; });
+    notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает", 0, true, () => { index = 0; });
   }
 }, 4000);
