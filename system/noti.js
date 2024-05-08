@@ -8,7 +8,7 @@ const message = DeusSiteInfo.noti_array;
 const functionArray = eval(`[${message}]`);
 let i = 0;
 setInterval(() => {
-  if (i === functionArray.length) {
+  if (i < functionArray.length) {
     functionArray[i]();
     i++;
   } else {
