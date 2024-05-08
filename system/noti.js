@@ -6,11 +6,11 @@
 const notis = new abrosnoti(document.querySelector(".abrosnoti"));
 const message = DeusSiteInfo.noti_array;
 const array = eval(`[${message}]`);
-let i = array.length;
+let index = array.length;
 setInterval(() => {
-  if (i < array.length) {
-    array[i]();
-    i++;
+  if (index < array.length) {
+    array[index]();
+    index++;
   } else {
     notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает", 0, true, () => { i = 0; });
   }
