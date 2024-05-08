@@ -9,7 +9,7 @@ let i = 1;
 message[0]()
 setInterval(()=>{
   if (i == message.length) {
-    notis.create("Demo done", "click on this notification to restart the demo or go look at the code if you're interested", 0, true, () => {i = 0})
+    notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает.", 0, true, () => {i = 0})
   } else if (i < message.length) {
     message[i]()
   }
