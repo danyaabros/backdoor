@@ -5,13 +5,13 @@
 
 const notis = new abrosnoti(document.querySelector(".abrosnoti"));
 const message = DeusSiteInfo.noti_array;
-const functionArray = eval(`[${message}]`);
-let i = 0;
-setInterval(() => {
-  if (i < functionArray.length) {
-    functionArray[i]();
-    i++;
-  } else {
-    notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает.", 0, true, () => {i = 1});
+const array = eval(`[${message}]`);
+let i = array.length;
+setInterval(()=>{
+  if (i == array.length) {
+    notis.create("Deus System", "Кликни на уведомление, чтобы узнать, что оно тут делает", 0, true, () => {i = 0})
+  } else if (i < array.length) {
+    array[i]()
   }
-}, 4000);
+  i++
+}, 4000)
