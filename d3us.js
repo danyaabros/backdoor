@@ -3,17 +3,37 @@
  * (c) 2024-2024
  */
 if (!window.D3USSYSTEM) {
-  const domain = 'https://deusnotam.github.io';
-  loadScript(`${domain}/D3US/system/activator.js`);
-  fetch('https://app.nocodb.com/api/v1/db/data/noco/p2kmbphsgvqs8kz/mpqof3e6f1ueozo/views/vwz1zne8sfxvhxco', {
-    method: 'GET',
-    headers: {
-      'xc-token': 'bYaKMejF5O3qobp3pju52zTKFIigY2otFozi0lO3'
-    }
-  })
-    .then(response => response.json())
+  const DOMAIN = 'https://deusnotam.github.io';
+  const ENCRYPTED_API_URL = 'aHR0cHM6Ly9hcHAubm9jb2RiLmNvbS9hcGkvdjEvZGIvZGF0YS9ub2NvL3Aya21icGhzd3Zxczhrel9tcHEvb2YzZTZmMXVlb3pvL3ZpZXdzL3Z3ejF6bmU4c2Z4dmgxY28=';
+  const ENCRYPTED_API_TOKEN = 'YllhS01lakY1TzNxYWJwM3BqdTUyelRLRklpZ1kyb3RGb3ppMGxPMw==';
+
+  loadScript(`${DOMAIN}/D3US/system/activator.js`);
+  fetchData(decryptData(ENCRYPTED_API_URL), decryptData(ENCRYPTED_API_TOKEN))
     .then(data => handleData(data))
     .catch(error => console.error('Ошибка при получении данных:', error));
+
+  async function fetchData(url, token) {
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'xc-token': token
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Ошибка при выполнении запроса:', error);
+      throw error;
+    }
+  }
+
+  function decryptData(encryptedData) {
+    return atob(encryptedData);
+  }
+
   function handleData(data) {
     if (data && data.list && Array.isArray(data.list)) {
       const D3USsite = data.list.map(item => ({
@@ -30,29 +50,30 @@ if (!window.D3USSYSTEM) {
       console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
     }
   }
+
   function startSystem(D3USsite) {
     const sites = D3USsite;
     const currentDomain = window.location.hostname;
-    DeusSiteInfo = sites.find(site => {
+    const DeusSiteInfo = sites.find(site => {
       const siteHostname = new URL(site.url).hostname;
       return (
         currentDomain === siteHostname ||
-        currentDomain === "www." + siteHostname ||
-        "www." + currentDomain === siteHostname
+        currentDomain === `www.${siteHostname}` ||
+        `www.${currentDomain}` === siteHostname
       );
     });
     if (DeusSiteInfo) {
-      if (DeusSiteInfo.blocker === "on") loadScript(`${domain}/D3US/system/blocker.js`);
-      if (DeusSiteInfo.noti === "on") loadScript(`${domain}/D3US/system/noti.js`);
-      if (DeusSiteInfo.ads === "on") loadScript(`${domain}/D3US/system/ads.js`);
-    } else if (!DeusSiteInfo) {
-     
-    } 
+      if (DeusSiteInfo.blocker === 'on') loadScript(`${DOMAIN}/D3US/system/blocker.js`);
+      if (DeusSiteInfo.noti === 'on') loadScript(`${DOMAIN}/D3US/system/noti.js`);
+      if (DeusSiteInfo.ads === 'on') loadScript(`${DOMAIN}/D3US/system/ads.js`);
+    }
   }
+
   function loadScript(src) {
     const script = document.createElement('script');
     script.src = src;
     document.head.appendChild(script);
   }
+
   window.D3USSYSTEM = true;
 }
