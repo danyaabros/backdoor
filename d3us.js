@@ -17,26 +17,20 @@ if (!window.D3USSYSTEM) {
   function handleData(data) {
     if (data && data.list && Array.isArray(data.list)) {
       const D3USsite = data.list.map(item => ({
-        name: item.SiteName,
         url: item.SiteURL,
-        system: item.System,
+        platform: item.Platform,
         noti: item.Noti,
         noti_array: item.NotiArray,
         blocker: item.Blocker,
-        blocker_effect: item.BlockerEffect,
-        blocker_redirecturl: item.BlockerRedirectURL,
-        blocker_blur_date: item.BlockerBlurDate,
-        blocker_note: item.BlockerNote,
+        blocker_array: item.BlockerArray,
         ads: item.ADS,
-        tilda: item.Tilda,
-        date: item.Subscribe,
       }));
-      checkDomain(D3USsite);
+      startSystem(D3USsite);
     } else {
       console.error('Ошибка: Полученные данные не соответствуют ожидаемой структуре');
     }
   }
-  function checkDomain(D3USsite) {
+  function startSystem(D3USsite) {
     const sites = D3USsite;
     const currentDomain = window.location.hostname;
     DeusSiteInfo = sites.find(site => {
@@ -47,14 +41,12 @@ if (!window.D3USSYSTEM) {
         "www." + currentDomain === siteHostname
       );
     });
-    if (DeusSiteInfo && DeusSiteInfo.system === "on") {
-      console.log("%cD3US System%c - %cConnected!%c\n\nProject Site → https://deusnotam.github.io", "font-weight: bold;", "", "color: #25ba1a; font-weight: bold;", "");
+    if (DeusSiteInfo) {
       if (DeusSiteInfo.blocker === "on") loadScript(`${domain}/D3US/system/blocker.js`);
       if (DeusSiteInfo.noti === "on") loadScript(`${domain}/D3US/system/noti.js`);
       if (DeusSiteInfo.ads === "on") loadScript(`${domain}/D3US/system/ads.js`);
-      if (DeusSiteInfo.tilda === "on") loadScript(`${domain}/D3US/tilda/tilda.js`);
     } else if (!DeusSiteInfo) {
-      console.log("%cD3US System%c\n\nСайт не найден в списке системы D3US.\nThe site was not found in the D3US system list.", "font-weight: bold;", "");
+     
     } 
   }
   function loadScript(src) {
