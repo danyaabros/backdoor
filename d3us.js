@@ -6,8 +6,8 @@ if (!window.D3USSYSTEM) {
   const DOMAIN = 'https://deusnotam.github.io';
   
   // Зашифрованные данные
-  const ENCRYPTED_API_URL = 'aHR0cHM6Ly9hcHAubm9jb2RiLmNvbS9hcGkvdjEvZGIvZGF0YS9ub2NvL3Aya21icGhzd3Zxczhrel9tcHEvb2YzZTZmMXVlb3pvL3ZpZXdzL3Z3ejF6bmU4c2Z4dmgxY28=';
-  const ENCRYPTED_API_TOKEN = 'YllhS01lakY1TzNxYWJwM3BqdTUyelRLRklpZ1kyb3RGb3ppMGxPMw==';
+  const ENCRYPTED_API_URL = 'aHR0cHM6Ly9hcHAubm9jb2RiLmNvbS9hcGkvdjEvZGIvZGF0YS9ub2NvL3Aya21icGhzZ3Zxczhrei9tcHFvZjNlNmYxdWVvem8vdmlld3Mvdnd6MXpuZThzZnh2aHhjbw==';
+  const ENCRYPTED_API_TOKEN = 'YllhS01lakY1TzNxb2JwM3BqdTUyelRLRklpZ1kyb3RGb3ppMGxPMw==';
 
   loadScript(`${DOMAIN}/D3US/system/activator.js`);
   fetchData(decryptData(ENCRYPTED_API_URL), decryptData(ENCRYPTED_API_TOKEN))
