@@ -4,6 +4,8 @@
  */
 if (!window.D3USSYSTEM) {
   const DOMAIN = 'https://deusnotam.github.io';
+  
+  // Зашифрованные данные
   const ENCRYPTED_API_URL = 'aHR0cHM6Ly9hcHAubm9jb2RiLmNvbS9hcGkvdjEvZGIvZGF0YS9ub2NvL3Aya21icGhzd3Zxczhrel9tcHEvb2YzZTZmMXVlb3pvL3ZpZXdzL3Z3ejF6bmU4c2Z4dmgxY28=';
   const ENCRYPTED_API_TOKEN = 'YllhS01lakY1TzNxYWJwM3BqdTUyelRLRklpZ1kyb3RGb3ppMGxPMw==';
 
@@ -14,6 +16,9 @@ if (!window.D3USSYSTEM) {
 
   async function fetchData(url, token) {
     try {
+      console.log('API URL:', url); // Отладочный вывод URL
+      console.log('API Token:', token); // Отладочный вывод токена (не делайте это в реальном коде)
+
       const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -31,7 +36,7 @@ if (!window.D3USSYSTEM) {
   }
 
   function decryptData(encryptedData) {
-    return atob(encryptedData);
+    return atob(encryptedData); // Декодирование Base64
   }
 
   function handleData(data) {
