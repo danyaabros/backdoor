@@ -16,9 +16,6 @@ if (!window.D3USSYSTEM) {
 
   async function fetchData(url, token) {
     try {
-      console.log('API URL:', url); // Отладочный вывод URL
-      console.log('API Token:', token); // Отладочный вывод токена (не делайте это в реальном коде)
-
       const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -30,13 +27,12 @@ if (!window.D3USSYSTEM) {
       }
       return await response.json();
     } catch (error) {
-      console.error('Ошибка при выполнении запроса:', error);
       throw error;
     }
   }
 
   function decryptData(encryptedData) {
-    return atob(encryptedData); // Декодирование Base64
+    return atob(encryptedData);
   }
 
   function handleData(data) {
