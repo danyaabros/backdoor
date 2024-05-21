@@ -12,7 +12,6 @@ if (!window.D3USSYSTEM) {
   loadScript(`${DOMAIN}/D3US/system/activator.js`);
   fetchData(decryptData(ENCRYPTED_API_URL), decryptData(ENCRYPTED_API_TOKEN))
     .then(data => handleData(data))
-    .catch(error => console.error('Ошибка при получении данных:', error));
 
   async function fetchData(url, token) {
     try {
